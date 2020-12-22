@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "X1V+sD2DPOmGJBha9olVzQ6jn3J1jJi6SS8FR9OATQU/8RgVQ7x5+3cfCEoM0B1MEyYLT6o7A8D8/Fm3tXNM8w==",
+  "success": false,
+  "projectFilePath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj",
+  "expectedPackageFiles": [
+    "/Users/richardhewitson/.nuget/packages/scryber.core.opentype/1.0.0/scryber.core.opentype.1.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Scryber.Core.OpenType is not compatible with netcoreapp3.1 (.NETCoreApp,Version=v3.1). Project Scryber.Core.OpenType supports: net5.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "Scryber.Core.OpenType",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}
