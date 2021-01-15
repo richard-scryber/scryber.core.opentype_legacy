@@ -30,7 +30,7 @@ namespace Scryber.OpenType
 
         public abstract bool IsCollection { get; }
 
-        public abstract TTFTableFactory GetTableFactory();
+        public abstract TTFTableFactory GetTableFactory(BigEndianReader reader);
 
         public TTFVersion(byte[] header)
         {
@@ -57,6 +57,15 @@ namespace Scryber.OpenType
                 vers = new TTFTrueTypeVersion(new string(chars), data);
             else if (chars[0] == 't' && chars[1] == 't' && chars[2] == 'c' && chars[3] == 'f')
                 vers = new TTFCollectionVersion(new string(chars), data);
+            else if (chars[0] == 'w' && chars[1] == 'O' && chars[2] == 'F' && chars[3] == 'F')
+            {
+                //wOFF not currently supported
+            }
+            else if (chars[0] == 'w' && chars[1] == 'O' && chars[2] == 'F' && chars[3] == '2')
+            {
+                var inner = GetVersion(reader);
+                vers = new WOF2OpenTypeVersion(new string(chars), data, inner);
+            }
             else
             {
                 BigEnd16 wrd1 = new BigEnd16(data, 0);
@@ -118,9 +127,35 @@ namespace Scryber.OpenType
             return "Open Type " + InnerVersion.ToString();
         }
 
-        public override TTFTableFactory GetTableFactory()
+        public override TTFTableFactory GetTableFactory(BigEndianReader reader)
         {
-            return new TTFOpenTypeTableFactory(false);
+            return new TTFOpenTypeTableFactory(this, reader, false);
+        }
+    }
+
+    public class WOF2OpenTypeVersion : TTFVersion
+    {
+        private TTFVersion _innervers;
+        protected TTFVersion InnerVersion
+        {
+            get { return _innervers; }
+        }
+
+        public override bool IsCollection { get { return InnerVersion.IsCollection; } }
+
+        public WOF2OpenTypeVersion(string name, byte[] data, TTFVersion inner) : base(data)
+        {
+            _innervers = inner;
+        }
+
+        public override string ToString()
+        {
+            return "WOFF2 " + InnerVersion.ToString();
+        }
+
+        public override TTFTableFactory GetTableFactory(BigEndianReader reader)
+        {
+            return new WOFF2TableFactory(this, reader, false);
         }
     }
 
@@ -147,9 +182,9 @@ namespace Scryber.OpenType
             return "TT Collection : " + this.VersionIdentifier;
         }
 
-        public override TTFTableFactory GetTableFactory()
+        public override TTFTableFactory GetTableFactory(BigEndianReader reader)
         {
-            return new TTFOpenTypeTableFactory(false);
+            return new TTFOpenTypeTableFactory(this, reader, false);
         }
     }
 
@@ -177,9 +212,9 @@ namespace Scryber.OpenType
             return "True Type : " + this.VersionIdentifier;
         }
 
-        public override TTFTableFactory GetTableFactory()
+        public override TTFTableFactory GetTableFactory(BigEndianReader reader)
         {
-            return null;
+            throw new NotImplementedException("The TableReader for the TrueType font is not implemented");
         }
     }
 }

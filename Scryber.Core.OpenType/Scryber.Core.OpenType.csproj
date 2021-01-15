@@ -31,7 +31,4 @@ This is the base type for reading OpenType TTF and TTC font files used in scrybe
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Scryber.Core.Compression.BrotliSharpLib\Scryber.Core.Compression.BrotliSharpLib.csproj" />
-  </ItemGroup>
 </Project>

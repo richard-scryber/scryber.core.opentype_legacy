@@ -4,67 +4,6 @@
     "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj": {}
   },
   "projects": {
-    "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj",
-        "projectName": "Scryber.Core.Compression.BrotliSharpLib",
-        "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj",
-        "packagesPath": "/Users/richardhewitson/.nuget/packages/",
-        "outputPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/richardhewitson/.config/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://siliconreef-nuget.azurewebsites.net/nuget": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "dependencies": {
-            "NuGet.Build.Packaging": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[0.2.2, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -147,11 +86,7 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {
-              "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj": {
-                "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {

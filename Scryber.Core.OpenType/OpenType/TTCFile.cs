@@ -15,30 +15,17 @@ namespace Scryber.OpenType
                 BigEndianReader reader = new BigEndianReader(ttc);
                 reader.Position = ttfHeadOffset;
 
-                TTFHeader header;
-                if (TTFHeader.TryReadHeader(reader, out header) == false)
+                TTFVersion vers;
+                if (TTFVersion.TryGetVersion(reader, out vers) == false)
                     throw new NotSupportedException("The current stream is not a supported OpenType or TrueType font file");
 
+                var factory = vers.GetTableFactory(reader);
 
-                List<TTFDirectory> dirs;
-                try
-                {
-                    dirs = new List<TTFDirectory>();
-
-                    for (int i = 0; i < header.NumberOfTables; i++)
-                    {
-                        TTFDirectory dir = new TTFDirectory();
-                        dir.Read(reader);
-                        dirs.Add(dir);
-                    }
-                }
-                catch (OutOfMemoryException) { throw; }
-                catch (System.Threading.ThreadAbortException) { throw; }
-                catch (StackOverflowException) { throw; }
-                catch (TTFReadException) { throw; }
-                catch (Exception ex) { throw new TTFReadException("Could not read the TTF File", ex); }
+                var header = factory.Header as TTFOpenTypeHeader;
+                var dirs = factory.Directories;
 
                 BigEndianWriter writer = new BigEndianWriter(ttf);
+
                 writer.Write(header.Version.HeaderData);
                 writer.WriteUInt16((ushort)header.NumberOfTables);
                 writer.WriteUInt16((ushort)header.SearchRange);

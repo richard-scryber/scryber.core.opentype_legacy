@@ -307,6 +307,21 @@ namespace Scryber.OpenType
                 }
             }
 
+            List<System.IO.FileInfo> woff2s = new List<System.IO.FileInfo>();
+            woff2s.AddRange(dir.GetFiles("*.woff2"));
+
+            if(woff2s.Count > 0)
+            {
+                for (int i = 0; i < cols.Count; i++)
+                {
+                    TTFRef tref = TTFRef.LoadRef(cols[i].FullName);
+                    if (null != tref)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Loaded Font : " + tref.GetFullName());
+                        matched.Add(tref);
+                    }
+                }
+            }
 
             return matched.ToArray();
         }
@@ -455,6 +470,8 @@ namespace Scryber.OpenType
             return refs.ToArray();
         }
 
+        
+
         /// <summary>
         /// Performs the actual reading and loading of the file with the BigEndian reader
         /// </summary>
@@ -463,31 +480,24 @@ namespace Scryber.OpenType
         /// <returns></returns>
         private static TTFRef DoLoadRef(BigEndianReader reader, string fullpath)
         {
-            TTFHeader head;
-            if (TTFHeader.TryReadHeader(reader, out head) == false)
+            TTFVersion vrs;
+            if (TTFVersion.TryGetVersion(reader, out vrs) == false)
                 return null;
 
-            TTFDirectoryList list = new TTFDirectoryList();
+            var fact = vrs.GetTableFactory(reader);
 
-            for (int i = 0; i < head.NumberOfTables; i++)
-            {
-                TTFDirectory dir = new TTFDirectory();
-                dir.Read(reader);
-                list.Add(dir);
-            }
-
-            TTFTableFactory fact = head.Version.GetTableFactory();
-            TTFRef ttfref = LoadARef(reader, fullpath, list, fact);
+            
+            TTFRef ttfref = LoadARef(vrs, fact, fullpath);
 
             return ttfref;
 
         }
 
-        public static TTFRef LoadARef(BigEndianReader reader, string fullpath, TTFDirectoryList list, TTFTableFactory fact)
+        public static TTFRef LoadARef(TTFVersion vers, TTFTableFactory fact, string fullpath)
         {
-            //SubTables.FontHeader fhead = fact.ReadDirectory(FontHeaderTable, list, reader) as SubTables.FontHeader;
-            SubTables.NamingTable ntable = fact.ReadDirectory(NameTable, list, reader) as SubTables.NamingTable;
-            SubTables.OS2Table os2table = fact.ReadDirectory(OS2Table, list, reader) as SubTables.OS2Table;
+
+            SubTables.NamingTable ntable = fact.ReadDirectory(NameTable) as SubTables.NamingTable;
+            SubTables.OS2Table os2table = fact.ReadDirectory(OS2Table) as SubTables.OS2Table;
 
 
             if (ntable == null)

@@ -1,9 +1,9 @@
 ﻿using System;
 namespace Scryber.OpenType
 {
-    public class WOFF2Header
+    public class WOFF2Header : TTFHeader
     {
-        public TTFVersion Version { get; set; }
+        
 
         public long TotalSize { get; set; }
 
@@ -13,8 +13,6 @@ namespace Scryber.OpenType
         {
             get { return TotalSize - TablesOffset; }
         }
-
-        public int TableNumber { get; set; }
 
         public long UncompressedSize { get; set; }
 
@@ -28,8 +26,6 @@ namespace Scryber.OpenType
 
         public long PrivateLength { get; set; }
 
-        public WOFF2TableDirectory Directory { get; set; }
-
         public bool IsCollection
         {
             get { return Version.IsCollection; }
@@ -40,14 +36,11 @@ namespace Scryber.OpenType
         }
 
 
-        public static bool TryReadHeader(BigEndianReader reader, out WOFF2Header header)
+        
+
+        public static bool TryReadHeader(WOF2OpenTypeVersion vers, BigEndianReader reader, out WOFF2Header header)
         {
             header = null;
-            TTFVersion vers;
-
-            if (TTFVersion.TryGetVersion(reader, out vers) == false)
-                return false;
-
             var sz = reader.ReadUInt32();
             var tnum = reader.ReadUInt16();
             var res = reader.ReadUInt16();
@@ -63,25 +56,12 @@ namespace Scryber.OpenType
             var privOff = reader.ReadUInt32();
             var privLen = reader.ReadUInt32();
 
-            WOFF2TableDirectory dir;
-
-            if (vers.IsCollection)
-            {
-                WOFF2CollectionDirectory col;
-                if (!WOFF2CollectionDirectory.TryReadCollectionDirectory(reader, (int)tnum, out col))
-                    return false;
-                dir = col;
-            }
-            else if (!WOFF2TableDirectory.TryReadDirectory(reader, (int)tnum, out dir))
-                return false;
-
             header = new WOFF2Header()
             {
-                Directory = dir,
                 Version = vers,
                 TablesOffset = reader.Position,
                 TotalSize = sz,
-                TableNumber = tnum,
+                NumberOfTables = tnum,
                 UncompressedSize = uncompsz,
                 WoffVersion = new Version((int)majorV, (int)minorV),
                 MetaOffset = metaOff,

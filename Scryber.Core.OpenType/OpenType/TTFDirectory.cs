@@ -89,6 +89,19 @@ namespace Scryber.OpenType
         }
     }
 
+
+    public class TTFTransformedDirectory : TTFDirectory
+    {
+
+        public uint UnTransformedLen { get; set; }
+
+        public TTFTransformedDirectory(string tag, uint checksum, uint offset, uint transformdlen, uint actualLen)
+            : base(tag, checksum, offset, transformdlen)
+        {
+            this.UnTransformedLen = actualLen;
+        }
+    }
+
     public class TTFDirectoryList : System.Collections.ObjectModel.KeyedCollection<string, TTFDirectory>
     {
         public TTFDirectoryList()

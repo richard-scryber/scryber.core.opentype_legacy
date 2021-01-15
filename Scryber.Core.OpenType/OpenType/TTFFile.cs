@@ -53,6 +53,7 @@ namespace Scryber.OpenType
         public TTFHeader Head
         {
             get { return _head; }
+            protected set { _head = value; }
         }
 
         private TTFTableSet _tables;
@@ -79,6 +80,7 @@ namespace Scryber.OpenType
         public TTFDirectoryList Directories
         {
             get { return _dirs; }
+            protected set { _dirs = value; }
         }
 
         public bool HasCMap(CMapEncoding encoding)
@@ -87,7 +89,7 @@ namespace Scryber.OpenType
             return null != tbl;
         }
 
-        public void Read(string path, int headOffset)
+        public virtual void Read(string path, int headOffset)
         {
             this.Read(new System.IO.FileInfo(path), headOffset);
         }
@@ -103,7 +105,7 @@ namespace Scryber.OpenType
             }
         }
 
-        public void Read(System.IO.Stream stream, int headOffset)
+        public virtual void Read(System.IO.Stream stream, int headOffset)
         {
             System.IO.MemoryStream ms = null;
             
@@ -152,7 +154,7 @@ namespace Scryber.OpenType
             }
         }
 
-        public void Read(byte[] data, int position)
+        public virtual void Read(byte[] data, int position)
         {
             System.IO.MemoryStream ms = null;
             BigEndianReader ber = null;
@@ -184,40 +186,30 @@ namespace Scryber.OpenType
                     ms.Dispose();
             }
         }
-        
 
-        private void Read(BigEndianReader reader)
+
+        protected virtual void Read(BigEndianReader reader)
         {
 
-            TTFHeader header;
-            if (TTFHeader.TryReadHeader(reader, out header) == false)
+            TTFVersion version;
+            if (TTFVersion.TryGetVersion(reader, out version) == false)
                 throw new NotSupportedException("The current stream is not a supported OpenType or TrueType font file");
 
-            List<TTFDirectory> dirs;
+            TTFDirectoryList dirs;
             try
             {
-                dirs = new List<TTFDirectory>();
+                var factory = version.GetTableFactory(reader);
+                dirs = factory.Directories;
 
-                for (int i = 0; i < header.NumberOfTables; i++)
-                {
-                    TTFDirectory dir = new TTFDirectory();
-                    dir.Read(reader);
-                    dirs.Add(dir);
-                }
-
-                dirs.Sort(delegate(TTFDirectory one, TTFDirectory two) { return one.Offset.CompareTo(two.Offset); });
-                this._dirs = new TTFDirectoryList(dirs);
-                this._head = header;
-
-                TTFTableFactory factory = this.GetFactory(header);
                 foreach (TTFDirectory dir in dirs)
                 {
-                    TTFTable tbl = factory.ReadDirectory(dir, this, reader);
-                    if(tbl != null)
+                    TTFTable tbl = factory.ReadDirectory(dir);
+                    if (tbl != null)
                         dir.SetTable(tbl);
                 }
 
-                
+                this._head = factory.Header;
+                this._dirs = dirs;
             }
             catch (OutOfMemoryException) { throw; }
             catch (System.Threading.ThreadAbortException) { throw; }
@@ -225,13 +217,13 @@ namespace Scryber.OpenType
             catch (TTFReadException) { throw; }
             catch (Exception ex) { throw new TTFReadException("Could not read the TTF File", ex); }
 
-            
-            
+
+
         }
 
-        protected virtual TTFTableFactory GetFactory(TTFHeader header)
+        protected virtual TTFTableFactory GetFactory(BigEndianReader reader, TTFVersion version)
         {
-            return header.Version.GetTableFactory();
+            return version.GetTableFactory(reader);
         }
 
         public const double NoWordSpace = 0.0;
@@ -441,9 +433,9 @@ namespace Scryber.OpenType
         {
             long oldpos = reader.Position;
             reader.Position = 0;
-            TTFHeader header;
+            TTFVersion header;
 
-            bool b = TTFHeader.TryReadHeader(reader, out header);
+            bool b = TTFVersion.TryGetVersion(reader, out header);
 
             reader.Position = oldpos;
 

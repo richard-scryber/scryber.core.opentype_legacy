@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.IO.Compression;
+using Scryber.OpenType;
 
 namespace Scryber.Core.OpenType.Tests
 {
@@ -27,25 +28,27 @@ namespace Scryber.Core.OpenType.Tests
                 return;
             }
 
-            ReadWOFFFromTypography(path);
+            var typeface = ReadWOFFFromTypography(path);
 
 
 
-            var fontRef = Scryber.Core.OpenType.Tests.WOFFFile.GetRefsFromWOFF(path);
-            if(null == fontRef || fontRef.Length == 0)
+            var fontRef = Scryber.OpenType.TTFRef.LoadRef(path);
+            if(null == fontRef)
             {
                 ExitClean("Could not load the font reference information for the file " + path);
                 return;
             }
 
+            var font = fontRef;
+
             /* /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Samples */
-            Console.WriteLine("Loaded font reference " + fontRef[0].FamilyName);
+            Console.WriteLine("Loaded font reference " + fontRef.FamilyName);
 
             
 
         }
 
-        static void ReadWOFFFromTypography(string path)
+        static Typography.OpenFont.Typeface ReadWOFFFromTypography(string path)
         {
             Typography.OpenFont.WebFont.Woff2DefaultBrotliDecompressFunc.DecompressHandler = new Typography.OpenFont.WebFont.BrotliDecompressStreamFunc(DecompressWithBrotli);
 
@@ -54,7 +57,7 @@ namespace Scryber.Core.OpenType.Tests
                 var reader = new Typography.OpenFont.OpenFontReader();
                 var typeface = reader.Read(stream);
 
-
+                return typeface;
             }
         }
 

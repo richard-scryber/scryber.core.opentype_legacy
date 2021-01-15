@@ -2,22 +2,9 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Scryber.Core.Compression.BrotliSharpLib/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/Scryber.Core.Compression.BrotliSharpLib.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Scryber.Core.Compression.BrotliSharpLib.dll": {}
-        }
-      },
       "Scryber.Core.OpenType/5.0.0-alpha": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Scryber.Core.Compression.BrotliSharpLib": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/Scryber.Core.OpenType.dll": {}
         },
@@ -38,11 +25,6 @@
     }
   },
   "libraries": {
-    "Scryber.Core.Compression.BrotliSharpLib/1.0.0": {
-      "type": "project",
-      "path": "../Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj",
-      "msbuildProject": "../Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj"
-    },
     "Scryber.Core.OpenType/5.0.0-alpha": {
       "type": "project",
       "path": "../Scryber.Core.OpenType/Scryber.Core.OpenType.csproj",
