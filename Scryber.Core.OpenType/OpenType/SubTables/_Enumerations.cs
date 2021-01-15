@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using System.Text;
 
 namespace Scryber.OpenType.SubTables
@@ -386,4 +387,74 @@ namespace Scryber.OpenType.SubTables
         PostscriptCID = 20
 
     }
+
+    public enum WOFF2TableTypes
+    {
+        cmap = 0,
+        head = 1,
+        hhea = 2,
+        hmtx = 3,
+        maxp = 4,
+        name = 5,
+        OS_2 = 6,
+        post = 7,
+        cvt_ = 8,
+        fpgm = 9,
+        glyf = 10,
+        loca = 11,
+        prep = 12,
+        CFF_ = 13,
+        VORG = 14,
+        EBDT = 15,
+        EBLC = 16,
+        gasp = 17,
+        hdmx = 18,
+        kern = 19,
+        LTSH = 20,
+        PCLT = 21,
+        VDMX = 22,
+        vhea = 23,
+        vmtx = 24,
+        BASE = 25,
+        GDEF = 26,
+        GPOS = 27,
+        GSUB = 28,
+        EBSC = 29,
+        JSTF = 30,
+        MATH = 31,
+        CBDT = 32,
+        CBLC = 33,
+        COLR = 34,
+        CPAL = 35,
+        SVG_ = 36,
+        sbix = 37,
+        acnt = 38,
+        avar = 39,
+        bdat = 40,
+        bloc = 41,
+        bsln = 42,
+        cvar = 43,
+        fdsc = 44,
+        feat = 45,
+        fmtx = 46,
+        fvar = 47,
+        gvar = 48,
+        hsty = 49,
+        just = 50,
+        lcar = 51,
+        mort = 52,
+        morx = 53,
+        opbd = 54,
+        prop = 55,
+        trak = 56,
+        Zapf = 57,
+        Silf = 58,
+        Glat = 59,
+        Gloc = 60,
+        Feat = 61,
+        Sill = 62,
+        _Arbitary = 63
+
+    }
+
 }

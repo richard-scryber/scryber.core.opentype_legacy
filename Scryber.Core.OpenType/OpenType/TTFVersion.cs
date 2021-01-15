@@ -28,6 +28,8 @@ namespace Scryber.OpenType
 
         public abstract override string ToString();
 
+        public abstract bool IsCollection { get; }
+
         public abstract TTFTableFactory GetTableFactory();
 
         public TTFVersion(byte[] header)
@@ -101,6 +103,8 @@ namespace Scryber.OpenType
             get { return _innervers; }
         }
 
+        public override bool IsCollection {  get { return false; } }
+
         public TTFOpenType1Version(UInt16 major, UInt16 minor, byte[] data) : base(data)
         {
             this._innervers = new Version((int)major, (int)minor);
@@ -129,6 +133,8 @@ namespace Scryber.OpenType
             private set;
         }
 
+        public override bool IsCollection { get { return true; } }
+
         public TTFCollectionVersion(string type, byte[] data) : base(data)
         {
             if (string.IsNullOrEmpty(type) || (type.Equals("ttcf", StringComparison.OrdinalIgnoreCase) == false))
@@ -154,6 +160,9 @@ namespace Scryber.OpenType
         {
             get { return _versid; }
         }
+
+        public override bool IsCollection { get { return false; } }
+
 
         public TTFTrueTypeVersion(string id, byte[] data) : base(data)
         {

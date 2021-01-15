@@ -477,6 +477,14 @@ namespace Scryber.OpenType
             }
 
             TTFTableFactory fact = head.Version.GetTableFactory();
+            TTFRef ttfref = LoadARef(reader, fullpath, list, fact);
+
+            return ttfref;
+
+        }
+
+        public static TTFRef LoadARef(BigEndianReader reader, string fullpath, TTFDirectoryList list, TTFTableFactory fact)
+        {
             //SubTables.FontHeader fhead = fact.ReadDirectory(FontHeaderTable, list, reader) as SubTables.FontHeader;
             SubTables.NamingTable ntable = fact.ReadDirectory(NameTable, list, reader) as SubTables.NamingTable;
             SubTables.OS2Table os2table = fact.ReadDirectory(OS2Table, list, reader) as SubTables.OS2Table;
@@ -484,30 +492,27 @@ namespace Scryber.OpenType
 
             if (ntable == null)
                 throw new ArgumentNullException("The required '" + NameTable + "' is not present in this font file. The OpenType file is corrupt");
-            if(os2table == null)
+            if (os2table == null)
                 throw new ArgumentNullException("The required '" + OS2Table + "' is not present in this font file. The OpenType file is corrupt");
             //if (fhead == null)
             //    throw new ArgumentNullException("The required '" + FontHeaderTable + "' is not present in this font file. The OpenType file is corrupt");
 
 
-            
+
             TTFRef ttfref = new TTFRef(fullpath);
             NameEntry entry;
             if (ntable.Names.TryGetEntry(FamilyNameID, out entry))
             {
-                ttfref.FamilyName = entry.ToString();  
+                ttfref.FamilyName = entry.ToString();
             }
 
             ttfref.FontRestrictions = os2table.FSType;
             ttfref.FontWidth = os2table.WidthClass;
             ttfref.FontWeight = os2table.WeightClass;
             ttfref.FontSelection = os2table.Selection;
-
             return ttfref;
-
         }
 
 
-        
     }
 }

@@ -4,71 +4,14 @@
     "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj": {}
   },
   "projects": {
-    "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj": {
+    "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj",
-        "projectName": "Scryber.Core.OpenType.Tests",
-        "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj",
+        "projectUniqueName": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj",
+        "projectName": "Scryber.Core.Compression.BrotliSharpLib",
+        "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj",
         "packagesPath": "/Users/richardhewitson/.nuget/packages/",
-        "outputPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/richardhewitson/.config/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.1"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://siliconreef-nuget.azurewebsites.net/nuget": {}
-        },
-        "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
-            "projectReferences": {
-              "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj": {
-                "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj",
-        "projectName": "Scryber.Core.OpenType",
-        "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj",
-        "packagesPath": "/Users/richardhewitson/.nuget/packages/",
-        "outputPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/obj/",
+        "outputPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/richardhewitson/.config/NuGet/NuGet.Config"
@@ -100,9 +43,187 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
+              "version": "[0.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj",
+        "projectName": "Scryber.Core.OpenType.Tests",
+        "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj",
+        "packagesPath": "/Users/richardhewitson/.nuget/packages/",
+        "outputPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/richardhewitson/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://siliconreef-nuget.azurewebsites.net/nuget": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj": {
+                "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj"
+              },
+              "/Users/richardhewitson/Projects/Scryber.Core/Typography/Typography.OpenFont/Typography.OpenFont.csproj": {
+                "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Typography/Typography.OpenFont/Typography.OpenFont.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj": {
+      "version": "5.0.0-alpha",
+      "restore": {
+        "projectUniqueName": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj",
+        "projectName": "Scryber.Core.OpenType",
+        "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj",
+        "packagesPath": "/Users/richardhewitson/.nuget/packages/",
+        "outputPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/richardhewitson/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://siliconreef-nuget.azurewebsites.net/nuget": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj": {
+                "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "NuGet.Build.Packaging": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
               "version": "[0.2.5-dev.8, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/richardhewitson/Projects/Scryber.Core/Typography/Typography.OpenFont/Typography.OpenFont.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/richardhewitson/Projects/Scryber.Core/Typography/Typography.OpenFont/Typography.OpenFont.csproj",
+        "projectName": "Typography.OpenFont",
+        "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Typography/Typography.OpenFont/Typography.OpenFont.csproj",
+        "packagesPath": "/Users/richardhewitson/.nuget/packages/",
+        "outputPath": "/Users/richardhewitson/Projects/Scryber.Core/Typography/Typography.OpenFont/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/richardhewitson/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://siliconreef-nuget.azurewebsites.net/nuget": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "imports": [
             "net461",
             "net462",

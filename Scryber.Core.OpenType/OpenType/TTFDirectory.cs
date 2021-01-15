@@ -54,6 +54,18 @@ namespace Scryber.OpenType
             get { return _tbl; }
         }
 
+        public TTFDirectory()
+        {
+
+        }
+
+        public TTFDirectory(string tag, uint checksum, uint offset, uint len)
+        {
+            _tag = tag;
+            _checksum = checksum;
+            _offset = offset;
+            _len = len;
+        }
 
         public void Read(BigEndianReader reader)
         {

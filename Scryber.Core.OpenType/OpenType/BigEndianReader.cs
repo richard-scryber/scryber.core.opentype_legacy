@@ -51,7 +51,7 @@ namespace Scryber.OpenType
         }
 
         private System.IO.Stream _base;
-        protected System.IO.Stream BaseStream
+        public System.IO.Stream BaseStream
         {
             get { return _base; }
         }

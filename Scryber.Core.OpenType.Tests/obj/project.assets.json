@@ -1,29 +1,63 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
-      "Scryber.Core.OpenType/1.0.0": {
+    "net5.0": {
+      "Scryber.Core.Compression.BrotliSharpLib/1.0.0": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Scryber.Core.Compression.BrotliSharpLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Scryber.Core.Compression.BrotliSharpLib.dll": {}
+        }
+      },
+      "Scryber.Core.OpenType/5.0.0-alpha": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Scryber.Core.Compression.BrotliSharpLib": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Scryber.Core.OpenType.dll": {}
         },
         "runtime": {
           "bin/placeholder/Scryber.Core.OpenType.dll": {}
         }
+      },
+      "Typography.OpenFont/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Typography.OpenFont.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Typography.OpenFont.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "Scryber.Core.OpenType/1.0.0": {
+    "Scryber.Core.Compression.BrotliSharpLib/1.0.0": {
+      "type": "project",
+      "path": "../Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj",
+      "msbuildProject": "../Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj"
+    },
+    "Scryber.Core.OpenType/5.0.0-alpha": {
       "type": "project",
       "path": "../Scryber.Core.OpenType/Scryber.Core.OpenType.csproj",
       "msbuildProject": "../Scryber.Core.OpenType/Scryber.Core.OpenType.csproj"
+    },
+    "Typography.OpenFont/1.0.0": {
+      "type": "project",
+      "path": "../../Typography/Typography.OpenFont/Typography.OpenFont.csproj",
+      "msbuildProject": "../../Typography/Typography.OpenFont/Typography.OpenFont.csproj"
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
-      "Scryber.Core.OpenType >= 1.0.0"
+    "net5.0": [
+      "Scryber.Core.OpenType >= 5.0.0-alpha",
+      "Typography.OpenFont >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -42,18 +76,21 @@
         "/Users/richardhewitson/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "net5.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {},
         "https://siliconreef-nuget.azurewebsites.net/nuget": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "projectReferences": {
             "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj": {
               "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj"
+            },
+            "/Users/richardhewitson/Projects/Scryber.Core/Typography/Typography.OpenFont/Typography.OpenFont.csproj": {
+              "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Typography/Typography.OpenFont/Typography.OpenFont.csproj"
             }
           }
         }
@@ -65,8 +102,8 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
+      "net5.0": {
+        "targetAlias": "net5.0",
         "imports": [
           "net461",
           "net462",
@@ -85,16 +122,5 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project Scryber.Core.OpenType is not compatible with netcoreapp3.1 (.NETCoreApp,Version=v3.1). Project Scryber.Core.OpenType supports: net5.0 (.NETCoreApp,Version=v5.0)",
-      "libraryId": "Scryber.Core.OpenType",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }

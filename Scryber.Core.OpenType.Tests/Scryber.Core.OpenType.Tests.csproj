@@ -2,10 +2,22 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Scryber.Core.OpenType\Scryber.Core.OpenType.csproj" />
+    <ProjectReference Include="..\..\Typography\Typography.OpenFont\Typography.OpenFont.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Samples\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Samples\OpenSans.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Samples\OpenSans.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
