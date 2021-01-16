@@ -84,5 +84,14 @@ namespace Scryber.OpenType
             reader = new BigEndianReader(outputStream);
             return reader;
         }
+
+        private byte[] ReconstructGlyphs(BigEndianReader reader, TTFDirectory glyph)
+        {
+            if (glyph.Tag != "glyph")
+                throw new TTFReadException("This is only meant for 'glyph' tables");
+
+
+            return null;
+        }
     }
 }

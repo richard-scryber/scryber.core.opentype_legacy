@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.IO.Compression;
 using Scryber.OpenType;
+using Scryber.OpenType.SubTables;
 
 namespace Scryber.Core.OpenType.Tests
 {
@@ -40,6 +42,15 @@ namespace Scryber.Core.OpenType.Tests
             }
 
             var font = fontRef;
+
+            var file = new TTFFile(path, 0);
+            Scryber.OpenType.SubTables.NamingTable name = file.Directories["name"].Table as Scryber.OpenType.SubTables.NamingTable;
+
+            if (null == name)
+                throw new InvalidOperationException("Failed");
+
+            int fitted;
+            SizeF size = file.MeasureString(CMapEncoding.WindowsUnicode, "This is the string", 0, 14, 400, true, out fitted);
 
             /* /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Samples */
             Console.WriteLine("Loaded font reference " + fontRef.FamilyName);
