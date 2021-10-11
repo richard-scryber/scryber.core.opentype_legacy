@@ -1,7 +1,7 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{E701BEDF-2EF0-4E62-8AF1-4400C4079E05}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Typography/Typography.OpenFont/WebFont/WoffReader.cs">
     <Files>
-      <File FileName="Scryber.Core.OpenType/OpenType/TTFRef.cs" Line="467" Column="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFRef.cs" Line="144" Column="14" />
       <File FileName="Scryber.Core.OpenType/OpenType/TTFDirectory.cs" />
       <File FileName="Scryber.Core.OpenType/OpenType/SubTables/CMapEncoding.cs" />
       <File FileName="../Scryber.Core/Scryber.Styles/Styles/StyleFontFace.cs" />
@@ -14,21 +14,31 @@
       <File FileName="Scryber.Core.OpenType/OpenType/TTFHeader.cs" Line="71" Column="1" />
       <File FileName="Scryber.Core.OpenType/OpenType/TTFReadException.cs" Line="25" Column="1" />
       <File FileName="Scryber.Core.OpenType/OpenType/BigEndianWriter.cs" Line="144" Column="56" />
+      <File FileName="Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj" Line="8" Column="14" />
+      <File FileName="../Typography/Typography.OpenFont/Tables.CFF/CFFTable.cs" Line="12" Column="1" />
+      <File FileName="../Typography/Typography.OpenFont/WebFont/WoffReader.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Scryber.Core.OpenType" expanded="True">
+            <Node name="Typography_Ref" expanded="True">
+              <Node name="Typography.OpenFont" expanded="True">
+                <Node name="Tables.CFF" expanded="True" />
+                <Node name="WebFont" expanded="True">
+                  <Node name="WoffReader.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
             <Node name="Scryber.Core.OpenType" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="OpenType" expanded="True">
-                <Node name="TTFRef.cs" selected="True" />
+                <Node name="SubTables" expanded="True" />
               </Node>
             </Node>
             <Node name="Scryber.Core.OpenType.Tests" expanded="True">
               <Node name="Dependencies" expanded="True">
-                <Node name="FrameworkReferences" expanded="True" />
-                <Node name="ProjectDependencies" expanded="True" />
+                <Node name=".NETCoreApp" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -56,5 +66,5 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Scryber.Core.OpenType.Tests PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Scryber.Core.OpenType.Tests PreferredExecutionTarget="net5.0" />
 </Properties>
