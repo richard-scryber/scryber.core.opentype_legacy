@@ -23,8 +23,7 @@ using System.Text;
 namespace Scryber.OpenType
 {
 
-    [global::System.Serializable]
-    public class TTFReadException : ApplicationException
+    public class TTFReadException : Exception
     {
         //
         // For guidelines regarding the creation of new exception types, see
@@ -36,9 +35,5 @@ namespace Scryber.OpenType
         public TTFReadException() { }
         public TTFReadException(string message) : base(message) { }
         public TTFReadException(string message, Exception inner) : base(message, inner) { }
-        protected TTFReadException(
-          System.Runtime.Serialization.SerializationInfo info,
-          System.Runtime.Serialization.StreamingContext context)
-            : base(info, context) { }
     }
 }

@@ -388,6 +388,7 @@ namespace Scryber.OpenType
 
         private TTFTable ReadHorizontalMetrics(uint length, TTFDirectoryList list, BigEndianReader reader)
         {
+            var pos = reader.Position;
             //Get the number of entries for the hMetrics list from the horizontal header table.
             TTFDirectory hhead = list["hhea"];
             if (hhead == null)
@@ -413,6 +414,9 @@ namespace Scryber.OpenType
                     throw new ArgumentNullException("No OS/2 has been specified in the font file, this is needed to load the hroizontal metrics");
                 os2.SetTable(tbl);
             }
+
+            if (reader.Position != pos)
+                reader.Position = pos;
 
             int firstcharindex = (os2.Table as OS2Table).FirstCharIndex;
             HorizontalMetrics hm = new HorizontalMetrics(reader.Position);
@@ -503,9 +507,14 @@ namespace Scryber.OpenType
                 }
 
                 long startStore = nt.FileOffset + nt.StringOffset;
+#if NETSTANDARD1_3
+                int currlang = 1033;
+                int parentlang = 2057;
+#else
                 int currlang = System.Globalization.CultureInfo.CurrentCulture.LCID;
                 int parentlang = System.Globalization.CultureInfo.CurrentCulture.Parent != null ?
                     System.Globalization.CultureInfo.CurrentCulture.Parent.LCID : 0;
+#endif
 
                 foreach (NameRecord rec in records)
                 {
@@ -536,9 +545,9 @@ namespace Scryber.OpenType
             return nt;
         }
 
-        #endregion
+#endregion
 
-        #region OS/2
+#region OS/2
 
         private TTFTable ReadOS2Table(uint length, TTFDirectoryList list, BigEndianReader reader)
         {
@@ -599,9 +608,9 @@ namespace Scryber.OpenType
             return os2;
         }
 
-        #endregion
+#endregion
 
-        #region post
+#region post
 
         private TTFTable ReadPostscriptTable(uint length, TTFDirectoryList list, BigEndianReader reader)
         {
@@ -652,9 +661,9 @@ namespace Scryber.OpenType
             return post;
         }
 
-        #endregion
+#endregion
 
-        #region kern
+#region kern
 
         private TTFTable ReadKerningTable(uint length, TTFDirectoryList list, BigEndianReader reader)
         {
@@ -704,6 +713,6 @@ namespace Scryber.OpenType
             return kern;
         }
 
-        #endregion
+#endregion
     }
 }

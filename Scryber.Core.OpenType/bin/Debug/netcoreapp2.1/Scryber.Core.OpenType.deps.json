@@ -1,0 +1,34 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "Scryber.Core.OpenType/1.0.0": {
+        "dependencies": {
+          "NuGet.Build.Packaging": "0.2.5-dev.8"
+        },
+        "runtime": {
+          "Scryber.Core.OpenType.dll": {}
+        }
+      },
+      "NuGet.Build.Packaging/0.2.5-dev.8": {}
+    }
+  },
+  "libraries": {
+    "Scryber.Core.OpenType/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NuGet.Build.Packaging/0.2.5-dev.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-S8hTZ7Gb34XBXKsN7oCaqNmEQ9OortT0P+PFNquZHYvbi1UbRvZFVcxVDbM2lvYiqsnEcaccYThDOgClvywIsA==",
+      "path": "nuget.build.packaging/0.2.5-dev.8",
+      "hashPath": "nuget.build.packaging.0.2.5-dev.8.nupkg.sha512"
+    }
+  }
+}

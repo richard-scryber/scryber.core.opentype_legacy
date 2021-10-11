@@ -1,0 +1,60 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{E701BEDF-2EF0-4E62-8AF1-4400C4079E05}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFRef.cs" Line="467" Column="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFDirectory.cs" />
+      <File FileName="Scryber.Core.OpenType/OpenType/SubTables/CMapEncoding.cs" />
+      <File FileName="../Scryber.Core/Scryber.Styles/Styles/StyleFontFace.cs" />
+      <File FileName="../Scryber.Core/Scryber.Components/Components/Document.cs" />
+      <File FileName="Scryber.Core.OpenType/OpenType/SubTables/CMAP_4_SubTable.cs" />
+      <File FileName="Scryber.Core.OpenType/OpenType/SubTables/CMAPSubTable.cs" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFFile.cs" Line="224" Column="13" />
+      <File FileName="Scryber.Core.OpenType/OpenType/SubTables/HorizontalMetrics.cs" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFTableFactory.cs" Line="517" Column="7" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFHeader.cs" Line="71" Column="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFReadException.cs" Line="25" Column="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/BigEndianWriter.cs" Line="144" Column="56" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Scryber.Core.OpenType" expanded="True">
+            <Node name="Scryber.Core.OpenType" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="OpenType" expanded="True">
+                <Node name="TTFRef.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Scryber.Core.OpenType.Tests" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="FrameworkReferences" expanded="True" />
+                <Node name="ProjectDependencies" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>../../../Downloads/Typography-master/Demo/Windows/PixelFarmSample.WinForms/PixelFarmSample.WinForms.csproj</String>
+    <String>../../../Downloads/Typography-master/Demo/Windows/TypographyTest.WinForms/TypographyTest.WinForms.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core/Scryber.Components/Components/Document.cs" line="1071" column="1" />
+      <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core/Scryber.Styles/Styles/StyleFontFace.cs" line="193" column="1" />
+      <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core/Scryber.Drawing/Drawing/PDFFontFactory.cs" line="1336" column="1" />
+      <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core/Scryber.Drawing/Resources/PDFFontDefinition.cs" line="545" column="1" />
+      <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core/Scryber.Drawing/Resources/PDFFontDefinition.cs" line="604" column="1" />
+      <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core/Scryber.Drawing/Resources/PDFFontDefinition.cs" line="521" column="1" />
+      <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core/Scryber.Drawing/Resources/PDFFontDefinition.cs" line="646" column="1" />
+      <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core/Scryber.Drawing/Resources/PDFCompositeFontWidths.cs" line="245" column="1" />
+      <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core/Scryber.Drawing/Resources/PDFCompositeFontWidths.cs" line="277" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Scryber.Core.OpenType.Tests PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

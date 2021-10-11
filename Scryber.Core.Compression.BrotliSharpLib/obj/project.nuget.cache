@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/ZfFrYDj6PDDojY1Tgf7mxAh9OBgJODuZaECDIhdO/ZzopXiLsaBJf8EiMAw24cEPMdm5SJ9AtLrpcijtDglZQ==",
+  "success": true,
+  "projectFilePath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/Scryber.Core.Compression.BrotliSharpLib.csproj",
+  "expectedPackageFiles": [
+    "/Users/richardhewitson/.nuget/packages/nuget.build.packaging/0.2.2/nuget.build.packaging.0.2.2.nupkg.sha512"
+  ],
+  "logs": []
+}

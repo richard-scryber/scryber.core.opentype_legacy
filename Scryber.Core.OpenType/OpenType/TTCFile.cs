@@ -32,9 +32,6 @@ namespace Scryber.OpenType
                         dirs.Add(dir);
                     }
                 }
-                catch (OutOfMemoryException) { throw; }
-                catch (System.Threading.ThreadAbortException) { throw; }
-                catch (StackOverflowException) { throw; }
                 catch (TTFReadException) { throw; }
                 catch (Exception ex) { throw new TTFReadException("Could not read the TTF File", ex); }
 

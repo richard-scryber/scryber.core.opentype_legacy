@@ -1,10 +1,10 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
-      "Scryber.Core.OpenType/1.0.0": {
+    "net5.0": {
+      "Scryber.Core.OpenType/5.0.3": {
         "type": "project",
-        "framework": "Unsupported,Version=v0.0",
+        "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
           "bin/placeholder/Scryber.Core.OpenType.dll": {}
         },
@@ -15,15 +15,15 @@
     }
   },
   "libraries": {
-    "Scryber.Core.OpenType/1.0.0": {
+    "Scryber.Core.OpenType/5.0.3": {
       "type": "project",
       "path": "../Scryber.Core.OpenType/Scryber.Core.OpenType.csproj",
       "msbuildProject": "../Scryber.Core.OpenType/Scryber.Core.OpenType.csproj"
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
-      "Scryber.Core.OpenType >= 1.0.0"
+    "net5.0": [
+      "Scryber.Core.OpenType >= 5.0.3"
     ]
   },
   "packageFolders": {
@@ -42,15 +42,15 @@
         "/Users/richardhewitson/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "net5.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {},
-        "https://siliconreef-nuget.azurewebsites.net/nuget": {}
+        "https://www.myget.org/F/sixlabors": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "projectReferences": {
             "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj": {
               "projectPath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj"
@@ -65,8 +65,8 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
+      "net5.0": {
+        "targetAlias": "net5.0",
         "imports": [
           "net461",
           "net462",
@@ -82,19 +82,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project Scryber.Core.OpenType is not compatible with netcoreapp3.1 (.NETCoreApp,Version=v3.1). Project Scryber.Core.OpenType supports: net5.0 (.NETCoreApp,Version=v5.0)",
-      "libraryId": "Scryber.Core.OpenType",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }

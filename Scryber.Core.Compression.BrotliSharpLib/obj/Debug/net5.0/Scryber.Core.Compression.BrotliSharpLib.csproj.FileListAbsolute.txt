@@ -1,0 +1,11 @@
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/bin/Debug/net5.0/Scryber.Core.Compression.BrotliSharpLib.deps.json
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/bin/Debug/net5.0/Scryber.Core.Compression.BrotliSharpLib.dll
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/bin/Debug/net5.0/ref/Scryber.Core.Compression.BrotliSharpLib.dll
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/bin/Debug/net5.0/Scryber.Core.Compression.BrotliSharpLib.pdb
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/obj/Debug/net5.0/Scryber.Core.Compression.BrotliSharpLib.GeneratedMSBuildEditorConfig.editorconfig
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/obj/Debug/net5.0/Scryber.Core.Compression.BrotliSharpLib.AssemblyInfoInputs.cache
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/obj/Debug/net5.0/Scryber.Core.Compression.BrotliSharpLib.AssemblyInfo.cs
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/obj/Debug/net5.0/Scryber.Core.Compression.BrotliSharpLib.csproj.CoreCompileInputs.cache
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/obj/Debug/net5.0/Scryber.Core.Compression.BrotliSharpLib.dll
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/obj/Debug/net5.0/ref/Scryber.Core.Compression.BrotliSharpLib.dll
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.Compression.BrotliSharpLib/obj/Debug/net5.0/Scryber.Core.Compression.BrotliSharpLib.pdb

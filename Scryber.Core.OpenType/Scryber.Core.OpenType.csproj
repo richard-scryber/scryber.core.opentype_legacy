@@ -1,22 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;netcoreapp2.1;netstandard2.1;netstandard2.0;netstandard1.3;net472</TargetFrameworks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Scryber.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>Scryber</RootNamespace>
     <PackOnBuild>true</PackOnBuild>
-    <PackageVersion>5.0.0-alpha</PackageVersion>
+    <PackageVersion>5.0.3</PackageVersion>
     <Authors>richard@scryber.co.uk</Authors>
     <Description>The Open Type font file package needed to read otf, ttf and ttc files.</Description>
     <Copyright>Scryber Collective Ltd 2020</Copyright>
     <Owners>Scryber</Owners>
     <PackageProjectUrl>https://www.scryber.co.uk</PackageProjectUrl>
-    <PackageReleaseNotes>Inline with standards - version 5 now targets version 5 of the .Net frameworks
+    <PackageReleaseNotes>Release for the 5.0.3 of the core engine.
 
-alpha a untested in a production environment
+Fix for reading the font files when the header and OS/2 tables are after the hmtx table
 
-This is the base type for reading OpenType TTF and TTC font files used in scryber, but is indenpendent from any PDF creation requirements.</PackageReleaseNotes>
+Inline with standards - version 5 now targets version 5 of the .Net frameworks
+
+This is the base type for reading OpenType, TTF and TTC font files used in scryber, but is indenpendent from any PDF creation requirements.</PackageReleaseNotes>
     <Summary>The OpenType font reading (and writing) library used by Scryber.</Summary>
     <PackageTags>Scryber; PDF</PackageTags>
     <Title>Scryber.Core.OpenType</Title>

@@ -1,0 +1,24 @@
+Z:/Projects/Scryber/Scryber.Core/Scryber.OpenType/bin/Debug/netcoreapp3.1/Scryber.OpenType.deps.json
+Z:/Projects/Scryber/Scryber.Core/Scryber.OpenType/bin/Debug/netcoreapp3.1/Scryber.OpenType.dll
+Z:/Projects/Scryber/Scryber.Core/Scryber.OpenType/bin/Debug/netcoreapp3.1/Scryber.OpenType.pdb
+Z:/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.csprojAssemblyReference.cache
+Z:/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.AssemblyInfoInputs.cache
+Z:/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.AssemblyInfo.cs
+Z:/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.dll
+Z:/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.pdb
+//vmware-host/Shared Folders/Projects/Scryber/Scryber.Core/Scryber.OpenType/bin/Debug/netcoreapp3.1/Scryber.OpenType.deps.json
+//vmware-host/Shared Folders/Projects/Scryber/Scryber.Core/Scryber.OpenType/bin/Debug/netcoreapp3.1/Scryber.OpenType.dll
+//vmware-host/Shared Folders/Projects/Scryber/Scryber.Core/Scryber.OpenType/bin/Debug/netcoreapp3.1/Scryber.OpenType.pdb
+//vmware-host/Shared Folders/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.csprojAssemblyReference.cache
+//vmware-host/Shared Folders/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.AssemblyInfoInputs.cache
+//vmware-host/Shared Folders/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.AssemblyInfo.cs
+//vmware-host/Shared Folders/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.dll
+//vmware-host/Shared Folders/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.pdb
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/bin/Debug/netcoreapp3.1/Scryber.OpenType.deps.json
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/bin/Debug/netcoreapp3.1/Scryber.OpenType.dll
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/bin/Debug/netcoreapp3.1/Scryber.OpenType.pdb
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.csproj.CoreCompileInputs.cache
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.AssemblyInfoInputs.cache
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.AssemblyInfo.cs
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.dll
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Debug/netcoreapp3.1/Scryber.OpenType.pdb

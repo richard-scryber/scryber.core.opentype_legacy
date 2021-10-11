@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Drawing;
 using Scryber.OpenType.SubTables;
 
 namespace Scryber.OpenType
@@ -219,10 +218,6 @@ namespace Scryber.OpenType
 
                 
             }
-            catch (OutOfMemoryException) { throw; }
-            catch (System.Threading.ThreadAbortException) { throw; }
-            catch (StackOverflowException) { throw; }
-            catch (TTFReadException) { throw; }
             catch (Exception ex) { throw new TTFReadException("Could not read the TTF File", ex); }
 
             
@@ -254,7 +249,7 @@ namespace Scryber.OpenType
         /// <param name="wordboundary">If True the measuring will stop at a boundary to a word rather than character.</param>
         /// <param name="charsfitted">Set to the number of characters that can be renered at this size within the width.</param>
         /// <returns></returns>
-        public SizeF MeasureString(CMapEncoding encoding, string s, int startOffset, double emsize, double availablePts, double? wordspacePts, double charspacePts, double hscale, bool vertical, bool wordboundary, out int charsfitted)
+        public MeasuredSize MeasureString(CMapEncoding encoding, string s, int startOffset, double emsize, double availablePts, double? wordspacePts, double charspacePts, double hscale, bool vertical, bool wordboundary, out int charsfitted)
         {
             HorizontalMetrics table = this.Directories["hmtx"].Table as HorizontalMetrics;
             CMAPTable cmap = this.Directories["cmap"].Table as CMAPTable;
@@ -345,11 +340,11 @@ namespace Scryber.OpenType
             len = len * emsize;
             len = len / (double)head.UnitsPerEm;
             double h = ((double)(os2.TypoAscender - os2.TypoDescender + os2.TypoLineGap) / (double)head.UnitsPerEm) * emsize;
-            return new SizeF((float)len, (float)h);
+            return new MeasuredSize(len, h);
         }
 
 
-        public SizeF MeasureString(CMapEncoding encoding, string s, int startOffset, double emsize, double available, bool wordboundary, out int charsfitted)
+        public MeasuredSize MeasureString(CMapEncoding encoding, string s, int startOffset, double emsize, double available, bool wordboundary, out int charsfitted)
         {
             HorizontalMetrics table = this.Directories["hmtx"].Table as HorizontalMetrics;
             CMAPTable cmap = this.Directories["cmap"].Table as CMAPTable;
@@ -408,7 +403,7 @@ namespace Scryber.OpenType
             len = len / (double)head.UnitsPerEm;
             len = len * emsize;
             double h = ((double)(os2.TypoAscender - os2.TypoDescender + os2.TypoLineGap) / (double)head.UnitsPerEm) * emsize;
-            return new SizeF((float)len, (float)h);
+            return new MeasuredSize((float)len, (float)h);
         }
 
         public static bool CanRead(string path)

@@ -136,7 +136,7 @@ namespace Scryber.OpenType
 
         public void Write(byte[] data)
         {
-            this.BaseStream.Write(data);
+            this.BaseStream.Write(data, 0, data.Length);
         }
 
         public void WriteASCIIChars(char[] chars)

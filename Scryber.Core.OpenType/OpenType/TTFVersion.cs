@@ -46,7 +46,7 @@ namespace Scryber.OpenType
 
             if (chars[0] == 'O' && chars[1] == 'T' && chars[2] == 'T' && chars[3] == 'O')
             {
-                //CCF Format is not supported
+                vers = new CCFOpenTypeVersion(new string(chars), data);
             }
             else if (chars[0] == 't' && chars[1] == 'r' && chars[2] == 'u' && chars[3] == 'e')
                 vers = new TTFTrueTypeVersion(new string(chars), data);
@@ -68,6 +68,7 @@ namespace Scryber.OpenType
             
             return vers != null;
         }
+
         public static TTFVersion GetVersion(BigEndianReader reader)
         {
             TTFVersion version;
@@ -90,6 +91,31 @@ namespace Scryber.OpenType
         }
 
         #endregion
+
+    }
+
+    public class CCFOpenTypeVersion : TTFVersion
+    {
+        public string VersionIdentifier
+        {
+            get;
+            private set;
+        }
+
+        public CCFOpenTypeVersion(string header, byte[] data) : base(data)
+        {
+            this.VersionIdentifier = header;
+        }
+
+        public override string ToString()
+        {
+            return "CCF OpenType" + this.VersionIdentifier;
+        }
+
+        public override TTFTableFactory GetTableFactory()
+        {
+            return new TTFOpenTypeTableFactory(false);
+        }
 
     }
 

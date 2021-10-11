@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Scryber.OpenType.SubTables;
 
@@ -28,6 +29,7 @@ namespace Scryber.OpenType
         private const string OS2Table = "OS/2";
         private const string NameTable = "name";
         private const string FontHeaderTable = "head";
+        private const string HorizontalHeaderTable = "hhea";
         private const ushort FamilyNameID = 1;
 
         #region public string FullPath {get;}
@@ -468,40 +470,86 @@ namespace Scryber.OpenType
                 return null;
 
             TTFDirectoryList list = new TTFDirectoryList();
+            bool hasOs2 = false;
+            bool hasFHead = false;
+            bool hasName = false;
 
             for (int i = 0; i < head.NumberOfTables; i++)
             {
                 TTFDirectory dir = new TTFDirectory();
                 dir.Read(reader);
                 list.Add(dir);
+                if (dir.Tag == OS2Table)
+                    hasOs2 = true;
+                else if (dir.Tag == FontHeaderTable)
+                    hasFHead = true;
+                else if (dir.Tag == NameTable)
+                    hasName = true;
             }
 
+
             TTFTableFactory fact = head.Version.GetTableFactory();
-            //SubTables.FontHeader fhead = fact.ReadDirectory(FontHeaderTable, list, reader) as SubTables.FontHeader;
-            SubTables.NamingTable ntable = fact.ReadDirectory(NameTable, list, reader) as SubTables.NamingTable;
-            SubTables.OS2Table os2table = fact.ReadDirectory(OS2Table, list, reader) as SubTables.OS2Table;
 
 
-            if (ntable == null)
+            SubTables.NamingTable ntable = null;
+
+            if (hasName)
+                ntable = fact.ReadDirectory(NameTable, list, reader) as SubTables.NamingTable;
+            else
                 throw new ArgumentNullException("The required '" + NameTable + "' is not present in this font file. The OpenType file is corrupt");
-            if(os2table == null)
-                throw new ArgumentNullException("The required '" + OS2Table + "' is not present in this font file. The OpenType file is corrupt");
+
+
             //if (fhead == null)
             //    throw new ArgumentNullException("The required '" + FontHeaderTable + "' is not present in this font file. The OpenType file is corrupt");
 
 
-            
+
             TTFRef ttfref = new TTFRef(fullpath);
             NameEntry entry;
             if (ntable.Names.TryGetEntry(FamilyNameID, out entry))
             {
-                ttfref.FamilyName = entry.ToString();  
+                ttfref.FamilyName = entry.ToString();
             }
 
-            ttfref.FontRestrictions = os2table.FSType;
-            ttfref.FontWidth = os2table.WidthClass;
-            ttfref.FontWeight = os2table.WeightClass;
-            ttfref.FontSelection = os2table.Selection;
+            if (hasOs2)
+            {
+                SubTables.OS2Table os2table = fact.ReadDirectory(OS2Table, list, reader) as SubTables.OS2Table;
+                ttfref.FontRestrictions = os2table.FSType;
+                ttfref.FontWidth = os2table.WidthClass;
+                ttfref.FontWeight = os2table.WeightClass;
+                ttfref.FontSelection = os2table.Selection;
+            }
+            else if (hasFHead)
+            {
+                SubTables.FontHeader fhead = fact.ReadDirectory(FontHeaderTable, list, reader) as SubTables.FontHeader;
+                var mac = fhead.MacStyle;
+                ttfref.FontRestrictions = FontRestrictions.InstallableEmbedding;
+                ttfref.FontWeight = WeightClass.Normal;
+
+                if ((mac & FontStyleFlags.Condensed) > 0)
+                    ttfref.FontWidth = WidthClass.Condensed;
+
+                else if ((mac & FontStyleFlags.Extended) > 0)
+                    ttfref.FontWidth = WidthClass.Expanded;
+
+                ttfref.FontSelection = 0;
+                if ((mac & FontStyleFlags.Italic) > 0)
+                    ttfref.FontSelection |= FontSelection.Italic;
+
+                if ((mac & FontStyleFlags.Bold) > 0)
+                {
+                    ttfref.FontSelection |= FontSelection.Bold;
+                    ttfref.FontWeight = WeightClass.Bold;
+                }
+                if ((mac & FontStyleFlags.Outline) > 0)
+                    ttfref.FontSelection |= FontSelection.Outlined;
+
+                if ((mac & FontStyleFlags.Underline) > 0)
+                    ttfref.FontSelection |= FontSelection.Underscore;
+            }
+            else
+                throw new ArgumentNullException("The required '" + OS2Table + "' or '" + FontHeaderTable + " are not present in this font file. The OpenType file is corrupt");
+
 
             return ttfref;
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <StartAction>Project</StartAction>
+    <StartArguments>/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/net5.0/Samples/Roboto-Black.ttf</StartArguments>
+    <StartWorkingDirectory>..\..\..\..</StartWorkingDirectory>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+</Project>

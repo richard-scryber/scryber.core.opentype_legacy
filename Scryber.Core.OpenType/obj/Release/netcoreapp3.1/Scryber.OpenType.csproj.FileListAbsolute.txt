@@ -1,0 +1,9 @@
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/bin/Release/netcoreapp3.1/Scryber.OpenType.deps.json
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/bin/Release/netcoreapp3.1/Scryber.OpenType.dll
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/bin/Release/netcoreapp3.1/Scryber.OpenType.pdb
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Release/netcoreapp3.1/Scryber.OpenType.csproj.CoreCompileInputs.cache
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Release/netcoreapp3.1/Scryber.OpenType.AssemblyInfoInputs.cache
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Release/netcoreapp3.1/Scryber.OpenType.AssemblyInfo.cs
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Release/netcoreapp3.1/Scryber.OpenType.dll
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Release/netcoreapp3.1/Scryber.OpenType.pdb
+/Users/richardhewitson/Projects/Scryber/Scryber.Core/Scryber.OpenType/obj/Release/netcoreapp3.1/Scryber.OpenType.csprojAssemblyReference.cache
