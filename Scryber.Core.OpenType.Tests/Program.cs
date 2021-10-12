@@ -1,4 +1,4 @@
-﻿#define UseOpenFont
+﻿//#define UseOpenFont
 
 using System;
 using System.ComponentModel;
@@ -19,11 +19,11 @@ namespace Scryber.Core.OpenType.Tests
         {
             var fonts = new[]
             {
-                new { Name = "Hachi", Include = false, Path = "https://fonts.gstatic.com/s/hachimarupop/v2/HI_TiYoRLqpLrEiMAuO9Ysfz7rW1.ttf"},
-                new { Name = "Roboto", Include = false, Path = "https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5Q.ttf"},
+                new { Name = "Hachi", Include = true, Path = "https://fonts.gstatic.com/s/hachimarupop/v2/HI_TiYoRLqpLrEiMAuO9Ysfz7rW1.ttf"},
+                new { Name = "Roboto", Include = true, Path = "https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5Q.ttf"},
                 new { Name = "Helvetica", Include = false, Path = "https://raw.githubusercontent.com/richard-scryber/scryber.core/svgParsing/Scryber.Drawing/Text/_FontResources/Helvetica/Helvetica.ttf"},
                 new { Name = "Noto TC", Include = false, Path = "https://fonts.gstatic.com/s/notosanstc/v20/-nF7OG829Oofr2wohFbTp9iFOQ.otf"},
-                new { Name = "Festive", Include = true, Path = "https://fonts.gstatic.com/s/festive/v1/cY9Ffj6KX1xcoDWhJt_qyvPQgah_Lw.woff2"}
+                new { Name = "Festive", Include = false, Path = "https://fonts.gstatic.com/s/festive/v1/cY9Ffj6KX1xcoDWhJt_qyvPQgah_Lw.woff2"}
             };
 
             FontDownload loader = new FontDownload();
@@ -58,7 +58,7 @@ namespace Scryber.Core.OpenType.Tests
             byte[] data = null;
 
             data = await loader.DownloadFrom(path);
-            
+
 
 #if UseOpenFont
 
@@ -115,7 +115,25 @@ namespace Scryber.Core.OpenType.Tests
 
 #else
 
+            TypefaceReader tfreader = new TypefaceReader();
 
+            using (var ms = new System.IO.MemoryStream(data))
+            {
+                var info = tfreader.GetInfo(ms, path);
+                if(null == info)
+                {
+                    ExitClean("Could not read the info from the font file");
+                }
+                else if(info.TypefaceCount == 0)
+                {
+                    ExitClean("No fonts could be read from the data: " + info.ErrorMessage ?? "Unknown error");
+                }
+                else
+                {
+                    Console.WriteLine("Read  " + info.TypefaceCount + " typefaces from the font file " + info.Path);
+                }
+
+            }
 
             using (var ms = new System.IO.MemoryStream(data))
             {

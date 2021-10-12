@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading;
 using Scryber.OpenType.SubTables;
@@ -44,6 +45,16 @@ namespace Scryber.OpenType
         {
             this._throwOnNotFound = throwonnotfound;
             this._required = new List<string>(required);
+        }
+
+        public ITypefaceInfo ReadTypefaceInfoAfterVersion(BigEndianReader reader, string source)
+        {
+            return this.DoReadTypefaceInfoAfterVersion(reader, source);
+        }
+
+        protected virtual ITypefaceInfo DoReadTypefaceInfoAfterVersion(BigEndianReader reader, string source)
+        {
+            throw new NotImplementedException();
         }
 
         public TTFTable ReadDirectory(string tname, TTFDirectoryList list, BigEndianReader reader)
@@ -91,6 +102,93 @@ namespace Scryber.OpenType
         public TTFOpenTypeTableFactory(bool throwonnotfound)
             : base(throwonnotfound, new string[] { "cmap", "head", "hhea", "maxp", "name", "OS/2", "post" })
         {
+        }
+
+        protected override ITypefaceInfo DoReadTypefaceInfoAfterVersion(BigEndianReader reader, string source)
+        {
+            ushort numtables = reader.ReadUInt16();
+            ushort search = reader.ReadUInt16();
+            ushort entry = reader.ReadUInt16();
+            ushort range = reader.ReadUInt16();
+
+            TTFDirectoryList list = new TTFDirectoryList();
+            bool hasOs2 = false;
+            bool hasFHead = false;
+            bool hasName = false;
+
+            for (int i = 0; i < numtables; i++)
+            {
+                TTFDirectory dir = new TTFDirectory();
+                dir.Read(reader);
+                list.Add(dir);
+                if (dir.Tag == Const.OS2Table)
+                    hasOs2 = true;
+                else if (dir.Tag == Const.FontHeaderTable)
+                    hasFHead = true;
+                else if (dir.Tag == Const.NameTable)
+                    hasName = true;
+            }
+
+            if (!(hasOs2 || hasName) || !hasFHead)
+                return new Utility.UnknownTypeface(source, "Not all the required tables (head with OS/2 or name) were found in the font file");
+
+            string familyname;
+            FontRestrictions restrictions;
+            WeightClass weight;
+            WidthClass width;
+            FontSelection selection;
+
+            var ntable = this.ReadDirectory(Const.NameTable, list, reader) as SubTables.NamingTable;
+
+            NameEntry nameEntry;
+            if (ntable.Names.TryGetEntry(Const.FamilyNameID, out nameEntry))
+                familyname = nameEntry.ToString();
+            else
+                return new Utility.UnknownTypeface(source, "The font family name could not be found in the font file");
+
+
+            if (hasOs2)
+            {
+                SubTables.OS2Table os2table = this.ReadDirectory(Const.OS2Table, list, reader) as SubTables.OS2Table;
+                restrictions = os2table.FSType;
+                width = os2table.WidthClass;
+                weight = os2table.WeightClass;
+                selection = os2table.Selection;
+            }
+            else if (hasFHead)
+            {
+                SubTables.FontHeader fhead = this.ReadDirectory(Const.FontHeaderTable, list, reader) as SubTables.FontHeader;
+                var mac = fhead.MacStyle;
+                restrictions = FontRestrictions.InstallableEmbedding;
+                weight = WeightClass.Normal;
+                width = WidthClass.Medium;
+
+                if ((mac & FontStyleFlags.Condensed) > 0)
+                    width = WidthClass.Condensed;
+
+                else if ((mac & FontStyleFlags.Extended) > 0)
+                    width = WidthClass.Expanded;
+
+                selection = 0;
+                if ((mac & FontStyleFlags.Italic) > 0)
+                    selection |= FontSelection.Italic;
+
+                if ((mac & FontStyleFlags.Bold) > 0)
+                {
+                    selection |= FontSelection.Bold;
+                    weight = WeightClass.Bold;
+                }
+                if ((mac & FontStyleFlags.Outline) > 0)
+                    selection |= FontSelection.Outlined;
+
+                if ((mac & FontStyleFlags.Underline) > 0)
+                    selection |= FontSelection.Underscore;
+            }
+            else
+                return new Utility.UnknownTypeface(source, "The font selections could not be found in the font file");
+
+
+            return new Utility.SingleTypefaceInfo(source, DataFormat.TTF, familyname, restrictions, weight, width, selection);
         }
 
         protected override TTFTable ReadTable(string tag, uint length, TTFDirectoryList list, BigEndianReader reader)

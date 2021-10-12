@@ -153,53 +153,9 @@ namespace Scryber.OpenType.SubTables
         OpenType12 = 2
     }
 
-    public enum WeightClass : ushort
-    {
-        Thin = 100,
-        ExtraLight = 200,
-        Light = 300,
-        Normal = 400,
-        Medium = 500,
-        SemiBold = 600,
-        Bold = 700,
-        ExtraBold = 800,
-        Black = 900
-    }
+    
 
-    public enum WidthClass : ushort
-    {
-        UltraCondensed = 1,
-        ExtraCondensed = 2,
-        Condensed = 3,
-        SemiCondensed = 4,
-        Medium = 5,
-        SemiExpanded = 6,
-        Expanded = 7,
-        ExtraExpanded = 8,
-        UltraExpanded = 9
-    }
-
-    [Flags()]
-    public enum FontRestrictions : ushort
-    {
-        InstallableEmbedding = 0,
-        Reserved0 = 1,
-        NoEmbedding = 2,
-        PreviewPrintEmbedding = 4,
-        EditableEmbedding = 8,
-        Reserved4 = 16,
-        Reserved5 = 32,
-        Reserved6 = 64,
-        Reserved7 = 128,
-        NoSubsetting = 256,
-        BitmapEmbedding = 512,
-        Reserved10 = 1024,
-        Reserved11 = 2048,
-        Reserved12 = 4096,
-        Reserved13 = 8192,
-        Reserved14 = 16384,
-        Reserved15 = 32768,
-    }
+    
 
     public enum UnicodeRangeBit : int
     {
@@ -292,17 +248,7 @@ namespace Scryber.OpenType.SubTables
         Tags = 92
     }
 
-    [Flags()]
-    public enum FontSelection : ushort
-    {
-        Italic = 1,
-        Underscore = 2,
-        Negative = 4,
-        Outlined = 8,
-        Strikeout = 16,
-        Bold = 32,
-        Regular = 64
-    }
+    
 
     public enum CodePageBit : int
     {

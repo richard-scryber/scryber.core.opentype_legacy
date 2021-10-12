@@ -22,23 +22,26 @@ using System.Text;
 
 namespace Scryber.OpenType
 {
-    public abstract class TTFVersion
+    public abstract class TypefaceVersion
     {
         public byte[] HeaderData { get; private set; }
+
+        public DataFormat DataFormat { get; private set; }
 
         public abstract override string ToString();
 
         public abstract TTFTableFactory GetTableFactory();
 
-        public TTFVersion(byte[] header)
+        public TypefaceVersion(byte[] header, DataFormat format)
         {
             this.HeaderData = header;
+            this.DataFormat = format;
         }
 
 
         #region public static TTFVersion GetVersion(BigEndianReader reader)
 
-        public static bool TryGetVersion(BigEndianReader reader, out TTFVersion vers)
+        public static bool TryGetVersion(BigEndianReader reader, out TypefaceVersion vers)
         {
             vers = null;
             byte[] data = reader.Read(4);
@@ -69,9 +72,9 @@ namespace Scryber.OpenType
             return vers != null;
         }
 
-        public static TTFVersion GetVersion(BigEndianReader reader)
+        public static TypefaceVersion GetVersion(BigEndianReader reader)
         {
-            TTFVersion version;
+            TypefaceVersion version;
 
             if (TryGetVersion(reader, out version) == false)
                 throw new TTFReadException("The version could not be identified");
@@ -94,7 +97,7 @@ namespace Scryber.OpenType
 
     }
 
-    public class CCFOpenTypeVersion : TTFVersion
+    public class CCFOpenTypeVersion : TypefaceVersion
     {
         public string VersionIdentifier
         {
@@ -102,14 +105,14 @@ namespace Scryber.OpenType
             private set;
         }
 
-        public CCFOpenTypeVersion(string header, byte[] data) : base(data)
+        public CCFOpenTypeVersion(string header, byte[] data) : base(data, DataFormat.OTF)
         {
             this.VersionIdentifier = header;
         }
 
         public override string ToString()
         {
-            return "CCF OpenType" + this.VersionIdentifier;
+            return "CCF OpenType " + this.VersionIdentifier;
         }
 
         public override TTFTableFactory GetTableFactory()
@@ -119,7 +122,7 @@ namespace Scryber.OpenType
 
     }
 
-    public class TTFOpenType1Version : TTFVersion
+    public class TTFOpenType1Version : TypefaceVersion
     {
         private Version _innervers;
         protected Version InnerVersion
@@ -127,7 +130,7 @@ namespace Scryber.OpenType
             get { return _innervers; }
         }
 
-        public TTFOpenType1Version(UInt16 major, UInt16 minor, byte[] data) : base(data)
+        public TTFOpenType1Version(UInt16 major, UInt16 minor, byte[] data) : base(data, DataFormat.TTF)
         {
             this._innervers = new Version((int)major, (int)minor);
             
@@ -146,7 +149,7 @@ namespace Scryber.OpenType
         }
     }
 
-    public class TTFCollectionVersion : TTFVersion
+    public class TTFCollectionVersion : TypefaceVersion
     {
 
         public string VersionIdentifier
@@ -155,7 +158,7 @@ namespace Scryber.OpenType
             private set;
         }
 
-        public TTFCollectionVersion(string type, byte[] data) : base(data)
+        public TTFCollectionVersion(string type, byte[] data) : base(data, DataFormat.TTC)
         {
             if (string.IsNullOrEmpty(type) || (type.Equals("ttcf", StringComparison.OrdinalIgnoreCase) == false))
                 throw new TTFReadException("The True Type collection version must be ttcf");
@@ -173,7 +176,7 @@ namespace Scryber.OpenType
         }
     }
 
-    public class TTFTrueTypeVersion : TTFVersion
+    public class TTFTrueTypeVersion : TypefaceVersion
     {
         private string _versid;
         public string VersionIdentifier
@@ -181,7 +184,7 @@ namespace Scryber.OpenType
             get { return _versid; }
         }
 
-        public TTFTrueTypeVersion(string id, byte[] data) : base(data)
+        public TTFTrueTypeVersion(string id, byte[] data) : base(data, DataFormat.TTF)
         {
             if (string.IsNullOrEmpty(id) || (id.Equals("TRUE", StringComparison.CurrentCultureIgnoreCase) || id.Equals("typ1", StringComparison.CurrentCultureIgnoreCase)) == false)
                 throw new TTFReadException("The true type version must be either 'true' or 'typ1'");

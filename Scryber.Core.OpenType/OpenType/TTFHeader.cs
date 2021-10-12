@@ -25,8 +25,8 @@ namespace Scryber.OpenType
     public class TTFHeader
     {
 
-        private TTFVersion _vers;
-        public TTFVersion Version
+        private TypefaceVersion _vers;
+        public TypefaceVersion Version
         {
             get { return _vers; }
             set { this._vers = value; }
@@ -67,8 +67,8 @@ namespace Scryber.OpenType
         internal static bool TryReadHeader(BigEndianReader reader, out TTFHeader header)
         {
             header = null;
-            TTFVersion vers;
-            if (TTFVersion.TryGetVersion(reader, out vers) == false)
+            TypefaceVersion vers;
+            if (TypefaceVersion.TryGetVersion(reader, out vers) == false)
                 return false;
 
             ushort numtables = reader.ReadUInt16();

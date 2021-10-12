@@ -26,11 +26,7 @@ namespace Scryber.OpenType
 {
     public class TTFRef
     {
-        private const string OS2Table = "OS/2";
-        private const string NameTable = "name";
-        private const string FontHeaderTable = "head";
-        private const string HorizontalHeaderTable = "hhea";
-        private const ushort FamilyNameID = 1;
+        
 
         #region public string FullPath {get;}
 
@@ -94,14 +90,14 @@ namespace Scryber.OpenType
 
         #endregion
 
-        #region public SubTables.WeightClass FontWeight {get; protected set;}
+        #region public WeightClass FontWeight {get; protected set;}
 
-        private SubTables.WeightClass _fontWeight;
+        private WeightClass _fontWeight;
 
         /// <summary>
         /// Gets the weight of this font, inheritors can set
         /// </summary>
-        public SubTables.WeightClass FontWeight
+        public WeightClass FontWeight
         {
             get
             {
@@ -113,13 +109,13 @@ namespace Scryber.OpenType
 
         #endregion
 
-        #region public SubTables.WidthClass FontWidth {get; protected set;}
+        #region public WidthClass FontWidth {get; protected set;}
 
-        private SubTables.WidthClass _fwidth;
+        private WidthClass _fwidth;
         /// <summary>
         /// Gets the width class of this font, inheritors can set.
         /// </summary>
-        public SubTables.WidthClass FontWidth
+        public WidthClass FontWidth
         {
             get
             {
@@ -133,12 +129,12 @@ namespace Scryber.OpenType
 
         #region public SubTables.FontRestrictions FontRestrictions {get; protected set;}
 
-        private SubTables.FontRestrictions _retrictions;
+        private FontRestrictions _retrictions;
 
         /// <summary>
         /// Gets the usage restrictions of this font. inheritors can set
         /// </summary>
-        public SubTables.FontRestrictions FontRestrictions
+        public FontRestrictions FontRestrictions
         {
             get
             {
@@ -152,12 +148,12 @@ namespace Scryber.OpenType
 
         #region public SubTables.FontSelection FontSelection {get; protected set;}
 
-        private SubTables.FontSelection _fsel;
+        private FontSelection _fsel;
 
         /// <summary>
         /// Gets the font selection (italic, underscore etc) of this font, inheritors can set.
         /// </summary>
-        public SubTables.FontSelection FontSelection
+        public FontSelection FontSelection
         {
             get
             {
@@ -178,9 +174,9 @@ namespace Scryber.OpenType
         {
             get
             {
-                bool b = (this.FontRestrictions & Scryber.OpenType.SubTables.FontRestrictions.NoEmbedding) == 0;
+                bool b = (this.FontRestrictions & FontRestrictions.NoEmbedding) == 0;
                 if (b)
-                    b = (this.FontRestrictions & Scryber.OpenType.SubTables.FontRestrictions.PreviewPrintEmbedding) > 0;
+                    b = (this.FontRestrictions & FontRestrictions.PreviewPrintEmbedding) > 0;
                 return b;
             }
         }
@@ -479,11 +475,11 @@ namespace Scryber.OpenType
                 TTFDirectory dir = new TTFDirectory();
                 dir.Read(reader);
                 list.Add(dir);
-                if (dir.Tag == OS2Table)
+                if (dir.Tag == Const.OS2Table)
                     hasOs2 = true;
-                else if (dir.Tag == FontHeaderTable)
+                else if (dir.Tag == Const.FontHeaderTable)
                     hasFHead = true;
-                else if (dir.Tag == NameTable)
+                else if (dir.Tag == Const.NameTable)
                     hasName = true;
             }
 
@@ -494,9 +490,9 @@ namespace Scryber.OpenType
             SubTables.NamingTable ntable = null;
 
             if (hasName)
-                ntable = fact.ReadDirectory(NameTable, list, reader) as SubTables.NamingTable;
+                ntable = fact.ReadDirectory(Const.NameTable, list, reader) as SubTables.NamingTable;
             else
-                throw new ArgumentNullException("The required '" + NameTable + "' is not present in this font file. The OpenType file is corrupt");
+                throw new ArgumentNullException("The required '" + Const.NameTable + "' is not present in this font file. The OpenType file is corrupt");
 
 
             //if (fhead == null)
@@ -506,14 +502,14 @@ namespace Scryber.OpenType
 
             TTFRef ttfref = new TTFRef(fullpath);
             NameEntry entry;
-            if (ntable.Names.TryGetEntry(FamilyNameID, out entry))
+            if (ntable.Names.TryGetEntry(Const.FamilyNameID, out entry))
             {
                 ttfref.FamilyName = entry.ToString();
             }
 
             if (hasOs2)
             {
-                SubTables.OS2Table os2table = fact.ReadDirectory(OS2Table, list, reader) as SubTables.OS2Table;
+                SubTables.OS2Table os2table = fact.ReadDirectory(Const.OS2Table, list, reader) as SubTables.OS2Table;
                 ttfref.FontRestrictions = os2table.FSType;
                 ttfref.FontWidth = os2table.WidthClass;
                 ttfref.FontWeight = os2table.WeightClass;
@@ -521,7 +517,7 @@ namespace Scryber.OpenType
             }
             else if (hasFHead)
             {
-                SubTables.FontHeader fhead = fact.ReadDirectory(FontHeaderTable, list, reader) as SubTables.FontHeader;
+                SubTables.FontHeader fhead = fact.ReadDirectory(Const.FontHeaderTable, list, reader) as SubTables.FontHeader;
                 var mac = fhead.MacStyle;
                 ttfref.FontRestrictions = FontRestrictions.InstallableEmbedding;
                 ttfref.FontWeight = WeightClass.Normal;
@@ -548,7 +544,7 @@ namespace Scryber.OpenType
                     ttfref.FontSelection |= FontSelection.Underscore;
             }
             else
-                throw new ArgumentNullException("The required '" + OS2Table + "' or '" + FontHeaderTable + " are not present in this font file. The OpenType file is corrupt");
+                throw new ArgumentNullException("The required '" + Const.OS2Table + "' or '" + Const.FontHeaderTable + " are not present in this font file. The OpenType file is corrupt");
 
 
             return ttfref;

@@ -1,23 +1,23 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{E701BEDF-2EF0-4E62-8AF1-4400C4079E05}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../Typography/Typography.OpenFont/IGlyphTranslator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Scryber.Core.OpenType.Tests/Program.cs">
     <Files>
-      <File FileName="Scryber.Core.OpenType.Tests/Program.cs" Line="101" Column="1" />
-      <File FileName="Scryber.Core.OpenType/OpenType/TTFFile.cs" />
-      <File FileName="../Typography/Typography.OpenFont/Tables/Cmap.cs" />
-      <File FileName="Scryber.Core.OpenType/TTFStringMeasurer.cs" />
-      <File FileName="Scryber.Core.OpenType/OpenType/TTFVersion.cs" />
-      <File FileName="Scryber.Core.OpenType/OpenType/SubTables/MaxProfile.cs" />
-      <File FileName="Scryber.Core.OpenType/OpenType/TTFTableFactory.cs" />
-      <File FileName="Scryber.Core.OpenType/OpenType/BigEndianReader.cs" />
-      <File FileName="../Typography/Typography.OpenFont/Tables/MaxProfile.cs" />
-      <File FileName="../Typography/Typography.OpenFont/WebFont/WoffReader.cs" />
-      <File FileName="../Typography/Typography.OpenFont/OpenFontReader.cs" />
-      <File FileName="../Typography/Typography.OpenFont/WebFont/Woff2Reader.cs" />
-      <File FileName="Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj" Line="6" Column="19" />
-      <File FileName="../Typography/Typography.OpenFont/Geometry.cs" />
-      <File FileName="../Typography/Typography.OpenFont/Typeography.Checker/Helpers.cs" />
-      <File FileName="../Typography/Typography.OpenFont/TrueTypeInterperter/TrueTypeInterpreter.cs" />
-      <File FileName="../Typography/Typography.OpenFont/IGlyphTranslator.cs" Line="114" Column="21" NotebookId="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TypefaceReader.cs" Line="28" Column="28" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFVersion.cs" Line="31" Column="52" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFTableFactory.cs" Line="160" Column="58" />
+      <File FileName="Scryber.Core.OpenType.Tests/Program.cs" Line="1" Column="20" />
+      <File FileName="../Typography/Typography.OpenFont/IGlyphTranslator.cs" Line="102" Column="41" NotebookId="1" />
+      <File FileName="../Typography/Typography.OpenFont/WebFont/Woff2Reader.cs" Line="1357" Column="33" NotebookId="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFHeader.cs" Line="77" Column="48" NotebookId="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFRef.cs" Line="548" Column="1" NotebookId="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/SubTables/_Enumerations.cs" Line="156" Column="5" NotebookId="1" />
+      <File FileName="Scryber.Core.OpenType/_Interfaces.cs" Line="26" Column="1" NotebookId="1" />
+      <File FileName="../Typography/Typography.OpenFont/WebFont/WoffReader.cs" Line="220" Column="14" NotebookId="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/_Enumerations.cs" Line="27" Column="1" NotebookId="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/Woff2/Woff2Version.cs" Line="4" Column="31" NotebookId="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/Woff/WoffVersion.cs" Line="14" Column="28" NotebookId="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/Utility/UnknownTypeface.cs" Line="4" Column="50" NotebookId="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/_Const.cs" Line="12" Column="2" NotebookId="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/Utility/SingleTypefaceInfo.cs" Line="11" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,14 +25,22 @@
           <Node name="Scryber.Core.OpenType" expanded="True">
             <Node name="Typography_Ref" expanded="True">
               <Node name="Typography.OpenFont" expanded="True">
-                <Node name="IGlyphTranslator.cs" selected="True" />
+                <Node name="Dependencies" expanded="True" />
+                <Node name="Typeography.Checker" expanded="True" />
+                <Node name="WebFont" expanded="True" />
               </Node>
             </Node>
             <Node name="Scryber.Core.OpenType" expanded="True">
               <Node name="Dependencies" expanded="True" />
+              <Node name="OpenType" expanded="True">
+                <Node name="Utility" expanded="True" />
+                <Node name="Woff" expanded="True" />
+                <Node name="Woff2" expanded="True" />
+              </Node>
             </Node>
             <Node name="Scryber.Core.OpenType.Tests" expanded="True">
               <Node name="Dependencies" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>

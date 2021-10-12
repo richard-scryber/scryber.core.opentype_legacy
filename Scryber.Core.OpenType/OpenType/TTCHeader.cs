@@ -23,8 +23,8 @@ namespace Scryber.OpenType
         internal static bool TryReadHeader(BigEndianReader reader, out TTCHeader header)
         {
             header = null;
-            TTFVersion vers;
-            if (TTFVersion.TryGetVersion(reader, out vers) == false)
+            TypefaceVersion vers;
+            if (TypefaceVersion.TryGetVersion(reader, out vers) == false)
                 return false;
 
             ushort versMajor = reader.ReadUInt16();

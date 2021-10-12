@@ -249,7 +249,7 @@ namespace Scryber.OpenType
         /// <param name="wordboundary">If True the measuring will stop at a boundary to a word rather than character.</param>
         /// <param name="charsfitted">Set to the number of characters that can be renered at this size within the width.</param>
         /// <returns></returns>
-        public MeasuredSize MeasureString(CMapEncoding encoding, string s, int startOffset, double emsize, double availablePts, double? wordspacePts, double charspacePts, double hscale, bool vertical, bool wordboundary, out int charsfitted)
+        public LineSize MeasureString(CMapEncoding encoding, string s, int startOffset, double emsize, double availablePts, double? wordspacePts, double charspacePts, double hscale, bool vertical, bool wordboundary, out int charsfitted)
         {
             HorizontalMetrics table = this.Directories["hmtx"].Table as HorizontalMetrics;
             CMAPTable cmap = this.Directories["cmap"].Table as CMAPTable;
@@ -330,21 +330,23 @@ namespace Scryber.OpenType
                 }
                 charsfitted++;
             }
+            bool isboundary = false;
 
             if ((charsfitted + startOffset < s.Length) && wordboundary && lastwordlen > 0)
             {
                 len = lastwordlen;
                 charsfitted = lastwordcount;
+                isboundary = true;
             }
 
             len = len * emsize;
             len = len / (double)head.UnitsPerEm;
             double h = ((double)(os2.TypoAscender - os2.TypoDescender + os2.TypoLineGap) / (double)head.UnitsPerEm) * emsize;
-            return new MeasuredSize(len, h);
+            return new LineSize(len, h, charsfitted, isboundary);
         }
 
 
-        public MeasuredSize MeasureString(CMapEncoding encoding, string s, int startOffset, double emsize, double available, bool wordboundary, out int charsfitted)
+        public LineSize MeasureString(CMapEncoding encoding, string s, int startOffset, double emsize, double available, bool wordboundary, out int charsfitted)
         {
             HorizontalMetrics table = this.Directories["hmtx"].Table as HorizontalMetrics;
             CMAPTable cmap = this.Directories["cmap"].Table as CMAPTable;
@@ -394,16 +396,18 @@ namespace Scryber.OpenType
                 charsfitted++;
             }
 
+            bool isboundary = false;
             if ((charsfitted + startOffset < s.Length) && wordboundary && lastwordlen > 0)
             {
                 len = lastwordlen;
                 charsfitted = lastwordcount;
+                isboundary = true;
             }
             
             len = len / (double)head.UnitsPerEm;
             len = len * emsize;
             double h = ((double)(os2.TypoAscender - os2.TypoDescender + os2.TypoLineGap) / (double)head.UnitsPerEm) * emsize;
-            return new MeasuredSize((float)len, (float)h);
+            return new LineSize((float)len, (float)h, charsfitted, isboundary);
         }
 
         public static bool CanRead(string path)
