@@ -1,4 +1,5 @@
 ﻿//#define UseOpenFont
+//#define Performance
 
 using System;
 using System.ComponentModel;
@@ -19,11 +20,14 @@ namespace Scryber.Core.OpenType.Tests
         {
             var fonts = new[]
             {
-                new { Name = "Hachi", Include = true, Path = "https://fonts.gstatic.com/s/hachimarupop/v2/HI_TiYoRLqpLrEiMAuO9Ysfz7rW1.ttf"},
-                new { Name = "Roboto", Include = true, Path = "https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5Q.ttf"},
-                new { Name = "Helvetica", Include = false, Path = "https://raw.githubusercontent.com/richard-scryber/scryber.core/svgParsing/Scryber.Drawing/Text/_FontResources/Helvetica/Helvetica.ttf"},
-                new { Name = "Noto TC", Include = false, Path = "https://fonts.gstatic.com/s/notosanstc/v20/-nF7OG829Oofr2wohFbTp9iFOQ.otf"},
-                new { Name = "Festive", Include = false, Path = "https://fonts.gstatic.com/s/festive/v1/cY9Ffj6KX1xcoDWhJt_qyvPQgah_Lw.woff2"}
+                new { Name = "Hachi Maru Pop",      Include = false,  Path = "https://fonts.gstatic.com/s/hachimarupop/v2/HI_TiYoRLqpLrEiMAuO9Ysfz7rW1.ttf"},
+                new { Name = "Roboto",              Include = false,  Path = "https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5Q.ttf"},
+                new { Name = "Open Sans Black TTF", Include = false,  Path = "https://fonts.gstatic.com/s/opensans/v26/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVc.ttf"},
+                new { Name = "Pragati Narrow",      Include = true,  Path = "https://fonts.gstatic.com/s/pragatinarrow/v8/vm8vdRf0T0bS1ffgsPB7WZ-mD17_.ttf"},   
+                new { Name = "Helvetica",           Include = false, Path = "https://raw.githubusercontent.com/richard-scryber/scryber.core/svgParsing/Scryber.Drawing/Text/_FontResources/Helvetica/Helvetica.ttf"},
+                new { Name = "Open Sans Black Wof", Include = false, Path = "https://fonts.gstatic.com/s/opensans/v26/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWVAexoMUdjFXmQ.woff"},
+                new { Name = "Noto TC",             Include = false, Path = "https://fonts.gstatic.com/s/notosanstc/v20/-nF7OG829Oofr2wohFbTp9iFOQ.otf"},
+                new { Name = "Festive",             Include = false, Path = "https://fonts.gstatic.com/s/festive/v1/cY9Ffj6KX1xcoDWhJt_qyvPQgah_Lw.woff2"}
             };
 
             FontDownload loader = new FontDownload();
@@ -131,6 +135,10 @@ namespace Scryber.Core.OpenType.Tests
                 else
                 {
                     Console.WriteLine("Read  " + info.TypefaceCount + " typefaces from the font file " + info.Path);
+                    foreach (var reference in info.References)
+                    {
+                        Console.WriteLine("    " + reference.FamilyName + " (weight: " + reference.FontWeight.ToString() + ", width: " + reference.FontWidth + ", restrictions : " + reference.Restrictions + ", selections : " + reference.Selections + ")");
+                    }
                 }
 
             }
@@ -163,6 +171,7 @@ namespace Scryber.Core.OpenType.Tests
 
             Console.WriteLine("String Measured to " + size.ToString() + " and fitted " + fitted + " characters out of " + text.Length);
 
+    #if Performance
 
             var stopWatch = Stopwatch.StartNew();
 
@@ -171,6 +180,8 @@ namespace Scryber.Core.OpenType.Tests
             stopWatch.Stop();
 
             Console.WriteLine("To measure 4 different strings " + maxRepeat + " times took " + stopWatch.Elapsed.TotalMilliseconds + "ms");
+    #endif
+
 #endif
 
         }

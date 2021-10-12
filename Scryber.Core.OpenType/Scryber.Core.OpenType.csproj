@@ -5,7 +5,6 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Scryber.snk</AssemblyOriginatorKeyFile>
     <RootNamespace>Scryber</RootNamespace>
-    <PackOnBuild>true</PackOnBuild>
     <PackageVersion>5.0.3</PackageVersion>
     <Authors>richard@scryber.co.uk</Authors>
     <Description>The Open Type font file package needed to read otf, ttf and ttc files.</Description>
