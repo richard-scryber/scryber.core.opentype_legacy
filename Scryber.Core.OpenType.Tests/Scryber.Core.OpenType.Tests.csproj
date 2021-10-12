@@ -9,4 +9,10 @@
     <ProjectReference Include="..\Scryber.Core.OpenType\Scryber.Core.OpenType.csproj" />
     <ProjectReference Include="..\..\Typography\Typography.OpenFont\Typography.OpenFont.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="fonts\" />
+  </ItemGroup>
 </Project>
