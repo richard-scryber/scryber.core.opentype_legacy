@@ -1,7 +1,6 @@
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/bin/Debug/netstandard2.1/Scryber.Core.OpenType.deps.json
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/bin/Debug/netstandard2.1/Scryber.Core.OpenType.dll
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/bin/Debug/netstandard2.1/Scryber.Core.OpenType.pdb
-/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/obj/Debug/netstandard2.1/Scryber.Core.OpenType.csproj.AssemblyReference.cache
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/obj/Debug/netstandard2.1/Scryber.Core.OpenType.GeneratedMSBuildEditorConfig.editorconfig
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/obj/Debug/netstandard2.1/Scryber.Core.OpenType.AssemblyInfoInputs.cache
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/obj/Debug/netstandard2.1/Scryber.Core.OpenType.AssemblyInfo.cs

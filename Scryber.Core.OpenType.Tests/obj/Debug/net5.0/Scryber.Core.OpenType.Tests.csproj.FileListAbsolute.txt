@@ -1,7 +1,3 @@
-/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.GeneratedMSBuildEditorConfig.editorconfig
-/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.AssemblyInfoInputs.cache
-/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.AssemblyInfo.cs
-/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.csproj.CoreCompileInputs.cache
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/net5.0/Scryber.Core.OpenType.Tests.deps.json
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/net5.0/Scryber.Core.OpenType.Tests.runtimeconfig.json
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/net5.0/Scryber.Core.OpenType.Tests.runtimeconfig.dev.json
@@ -9,10 +5,16 @@
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/net5.0/ref/Scryber.Core.OpenType.Tests.dll
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/net5.0/Scryber.Core.OpenType.Tests.pdb
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/net5.0/Scryber.Core.OpenType.dll
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/net5.0/Typography.OpenFont.dll
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/net5.0/Scryber.Core.OpenType.pdb
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/net5.0/Typography.OpenFont.pdb
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.csproj.AssemblyReference.cache
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.AssemblyInfoInputs.cache
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.AssemblyInfo.cs
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.csproj.CoreCompileInputs.cache
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.csproj.CopyComplete
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.dll
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/ref/Scryber.Core.OpenType.Tests.dll
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.pdb
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.genruntimeconfig.cache
-/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/net5.0/Scryber.Core.OpenType.Tests.csproj.AssemblyReference.cache

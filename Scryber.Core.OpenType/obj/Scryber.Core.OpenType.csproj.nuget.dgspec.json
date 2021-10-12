@@ -18,8 +18,9 @@
           "/Users/richardhewitson/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net472",
-          "netcoreapp2.1",
+          "net48",
+          "net5.0",
+          "net6.0",
           "netcoreapp3.1",
           "netstandard1.3",
           "netstandard2.0",
@@ -30,16 +31,20 @@
           "https://www.myget.org/F/sixlabors": {}
         },
         "frameworks": {
-          "netcoreapp2.1": {
-            "targetAlias": "netcoreapp2.1",
-            "projectReferences": {}
-          },
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           },
-          "net472": {
-            "targetAlias": "net472",
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          },
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          },
+          "net48": {
+            "targetAlias": "net48",
             "projectReferences": {}
           },
           "netstandard1.3": {
@@ -62,34 +67,6 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.1": {
-          "targetAlias": "netcoreapp2.1",
-          "dependencies": {
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.1.0, )",
-              "autoReferenced": true
-            },
-            "NuGet.Build.Packaging": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[0.2.5-dev.8, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
-        },
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
@@ -115,10 +92,10 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100-rc.1.21463.6/RuntimeIdentifierGraph.json"
         },
-        "net472": {
-          "targetAlias": "net472",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "NuGet.Build.Packaging": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -127,7 +104,61 @@
               "version": "[0.2.5-dev.8, )"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100-rc.1.21463.6/RuntimeIdentifierGraph.json"
+        },
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "NuGet.Build.Packaging": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[0.2.5-dev.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100-rc.1.21463.6/RuntimeIdentifierGraph.json"
+        },
+        "net48": {
+          "targetAlias": "net48",
+          "dependencies": {
+            "NuGet.Build.Packaging": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[0.2.5-dev.8, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100-rc.1.21463.6/RuntimeIdentifierGraph.json"
         },
         "netstandard1.3": {
           "targetAlias": "netstandard1.3",
@@ -144,7 +175,7 @@
               "version": "[0.2.5-dev.8, )"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100-rc.1.21463.6/RuntimeIdentifierGraph.json"
         },
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
@@ -172,7 +203,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100-rc.1.21463.6/RuntimeIdentifierGraph.json"
         },
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
@@ -199,7 +230,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100-rc.1.21463.6/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,22 +1,23 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{E701BEDF-2EF0-4E62-8AF1-4400C4079E05}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../Typography/Typography.OpenFont/WebFont/WoffReader.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Typography/Typography.OpenFont/IGlyphTranslator.cs">
     <Files>
-      <File FileName="Scryber.Core.OpenType/OpenType/TTFRef.cs" Line="144" Column="14" />
-      <File FileName="Scryber.Core.OpenType/OpenType/TTFDirectory.cs" />
-      <File FileName="Scryber.Core.OpenType/OpenType/SubTables/CMapEncoding.cs" />
-      <File FileName="../Scryber.Core/Scryber.Styles/Styles/StyleFontFace.cs" />
-      <File FileName="../Scryber.Core/Scryber.Components/Components/Document.cs" />
-      <File FileName="Scryber.Core.OpenType/OpenType/SubTables/CMAP_4_SubTable.cs" />
-      <File FileName="Scryber.Core.OpenType/OpenType/SubTables/CMAPSubTable.cs" />
-      <File FileName="Scryber.Core.OpenType/OpenType/TTFFile.cs" Line="224" Column="13" />
-      <File FileName="Scryber.Core.OpenType/OpenType/SubTables/HorizontalMetrics.cs" />
-      <File FileName="Scryber.Core.OpenType/OpenType/TTFTableFactory.cs" Line="517" Column="7" />
-      <File FileName="Scryber.Core.OpenType/OpenType/TTFHeader.cs" Line="71" Column="1" />
-      <File FileName="Scryber.Core.OpenType/OpenType/TTFReadException.cs" Line="25" Column="1" />
-      <File FileName="Scryber.Core.OpenType/OpenType/BigEndianWriter.cs" Line="144" Column="56" />
-      <File FileName="Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj" Line="8" Column="14" />
-      <File FileName="../Typography/Typography.OpenFont/Tables.CFF/CFFTable.cs" Line="12" Column="1" />
-      <File FileName="../Typography/Typography.OpenFont/WebFont/WoffReader.cs" Line="1" Column="1" />
+      <File FileName="Scryber.Core.OpenType.Tests/Program.cs" Line="101" Column="1" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFFile.cs" />
+      <File FileName="../Typography/Typography.OpenFont/Tables/Cmap.cs" />
+      <File FileName="Scryber.Core.OpenType/TTFStringMeasurer.cs" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFVersion.cs" />
+      <File FileName="Scryber.Core.OpenType/OpenType/SubTables/MaxProfile.cs" />
+      <File FileName="Scryber.Core.OpenType/OpenType/TTFTableFactory.cs" />
+      <File FileName="Scryber.Core.OpenType/OpenType/BigEndianReader.cs" />
+      <File FileName="../Typography/Typography.OpenFont/Tables/MaxProfile.cs" />
+      <File FileName="../Typography/Typography.OpenFont/WebFont/WoffReader.cs" />
+      <File FileName="../Typography/Typography.OpenFont/OpenFontReader.cs" />
+      <File FileName="../Typography/Typography.OpenFont/WebFont/Woff2Reader.cs" />
+      <File FileName="Scryber.Core.OpenType.Tests/Scryber.Core.OpenType.Tests.csproj" Line="6" Column="19" />
+      <File FileName="../Typography/Typography.OpenFont/Geometry.cs" />
+      <File FileName="../Typography/Typography.OpenFont/Typeography.Checker/Helpers.cs" />
+      <File FileName="../Typography/Typography.OpenFont/TrueTypeInterperter/TrueTypeInterpreter.cs" />
+      <File FileName="../Typography/Typography.OpenFont/IGlyphTranslator.cs" Line="114" Column="21" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,22 +25,14 @@
           <Node name="Scryber.Core.OpenType" expanded="True">
             <Node name="Typography_Ref" expanded="True">
               <Node name="Typography.OpenFont" expanded="True">
-                <Node name="Tables.CFF" expanded="True" />
-                <Node name="WebFont" expanded="True">
-                  <Node name="WoffReader.cs" selected="True" />
-                </Node>
+                <Node name="IGlyphTranslator.cs" selected="True" />
               </Node>
             </Node>
             <Node name="Scryber.Core.OpenType" expanded="True">
               <Node name="Dependencies" expanded="True" />
-              <Node name="OpenType" expanded="True">
-                <Node name="SubTables" expanded="True" />
-              </Node>
             </Node>
             <Node name="Scryber.Core.OpenType.Tests" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name=".NETCoreApp" expanded="True" />
-              </Node>
+              <Node name="Dependencies" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -63,8 +56,10 @@
       <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core/Scryber.Drawing/Resources/PDFFontDefinition.cs" line="646" column="1" />
       <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core/Scryber.Drawing/Resources/PDFCompositeFontWidths.cs" line="245" column="1" />
       <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core/Scryber.Drawing/Resources/PDFCompositeFontWidths.cs" line="277" column="1" />
+      <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Typography/Typography.OpenFont/OpenFontReader.cs" line="238" column="1" />
+      <Breakpoint file="/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/Program.cs" relfile="Scryber.Core.OpenType.Tests/Program.cs" line="94" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Scryber.Core.OpenType.Tests PreferredExecutionTarget="net5.0" />
+  <MonoDevelop.Ide.ItemProperties.Scryber.Core.OpenType.Tests PreferredExecutionTarget="net6.0" />
 </Properties>

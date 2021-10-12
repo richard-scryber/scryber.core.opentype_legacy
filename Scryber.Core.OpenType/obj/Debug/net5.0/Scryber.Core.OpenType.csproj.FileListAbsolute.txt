@@ -9,4 +9,3 @@
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/obj/Debug/net5.0/Scryber.Core.OpenType.dll
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/obj/Debug/net5.0/ref/Scryber.Core.OpenType.dll
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/obj/Debug/net5.0/Scryber.Core.OpenType.pdb
-/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/obj/Debug/net5.0/Scryber.Core.OpenType.csproj.AssemblyReference.cache

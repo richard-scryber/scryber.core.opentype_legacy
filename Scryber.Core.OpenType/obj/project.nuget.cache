@@ -1,17 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "h1zOu8rVOcYbmwg2+mUOv4OnlWXvnB9mHfPkwZ+PsMWZgFywXzfNaJpJS8iuq+o5wQiG2DgYH/XZEIYzrim2Lw==",
+  "dgSpecHash": "SzoiSTnKZhDCOSoXYyFJnY11Yv/FAOEcME5Z5wrb99gc79o5F2o+mMcoxaaVnZ8Tn2IuXjJEQ12vLZRKGFWu1w==",
   "success": true,
   "projectFilePath": "/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType/Scryber.Core.OpenType.csproj",
   "expectedPackageFiles": [
-    "/Users/richardhewitson/.nuget/packages/microsoft.netcore.app/2.1.0/microsoft.netcore.app.2.1.0.nupkg.sha512",
-    "/Users/richardhewitson/.nuget/packages/microsoft.netcore.dotnetapphost/2.1.0/microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",
-    "/Users/richardhewitson/.nuget/packages/microsoft.netcore.dotnethostpolicy/2.1.0/microsoft.netcore.dotnethostpolicy.2.1.0.nupkg.sha512",
-    "/Users/richardhewitson/.nuget/packages/microsoft.netcore.dotnethostresolver/2.1.0/microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512",
     "/Users/richardhewitson/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "/Users/richardhewitson/.nuget/packages/microsoft.netcore.platforms/2.1.0/microsoft.netcore.platforms.2.1.0.nupkg.sha512",
     "/Users/richardhewitson/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
-    "/Users/richardhewitson/.nuget/packages/microsoft.netcore.targets/2.1.0/microsoft.netcore.targets.2.1.0.nupkg.sha512",
     "/Users/richardhewitson/.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "/Users/richardhewitson/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/Users/richardhewitson/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",

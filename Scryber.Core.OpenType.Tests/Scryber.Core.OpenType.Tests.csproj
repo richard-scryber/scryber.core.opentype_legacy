@@ -2,10 +2,11 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net5.0;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net6.0;net5.0;netcoreapp3.1;netstandard2.1</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Scryber.Core.OpenType\Scryber.Core.OpenType.csproj" />
+    <ProjectReference Include="..\..\Typography\Typography.OpenFont\Typography.OpenFont.csproj" />
   </ItemGroup>
 </Project>

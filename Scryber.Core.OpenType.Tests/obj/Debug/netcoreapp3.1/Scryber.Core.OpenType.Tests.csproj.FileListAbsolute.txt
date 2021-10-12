@@ -4,7 +4,11 @@
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/netcoreapp3.1/Scryber.Core.OpenType.Tests.dll
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/netcoreapp3.1/Scryber.Core.OpenType.Tests.pdb
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/netcoreapp3.1/Scryber.Core.OpenType.dll
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/netcoreapp3.1/Typography.OpenFont.dll
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/netcoreapp3.1/Scryber.Core.OpenType.pdb
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/bin/Debug/netcoreapp3.1/Typography.OpenFont.pdb
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/netcoreapp3.1/Scryber.Core.OpenType.Tests.csproj.AssemblyReference.cache
+/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/netcoreapp3.1/Scryber.Core.OpenType.Tests.GeneratedMSBuildEditorConfig.editorconfig
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/netcoreapp3.1/Scryber.Core.OpenType.Tests.AssemblyInfoInputs.cache
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/netcoreapp3.1/Scryber.Core.OpenType.Tests.AssemblyInfo.cs
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/netcoreapp3.1/Scryber.Core.OpenType.Tests.csproj.CoreCompileInputs.cache
@@ -12,5 +16,3 @@
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/netcoreapp3.1/Scryber.Core.OpenType.Tests.dll
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/netcoreapp3.1/Scryber.Core.OpenType.Tests.pdb
 /Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/netcoreapp3.1/Scryber.Core.OpenType.Tests.genruntimeconfig.cache
-/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/netcoreapp3.1/Scryber.Core.OpenType.Tests.csproj.AssemblyReference.cache
-/Users/richardhewitson/Projects/Scryber.Core/Scryber.Core.OpenType/Scryber.Core.OpenType.Tests/obj/Debug/netcoreapp3.1/Scryber.Core.OpenType.Tests.GeneratedMSBuildEditorConfig.editorconfig

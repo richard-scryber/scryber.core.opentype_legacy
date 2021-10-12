@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using Scryber.OpenType.SubTables;
 
 namespace Scryber.OpenType
@@ -440,19 +441,15 @@ namespace Scryber.OpenType
 
         #region maxp
 
+        private static readonly Version MaxPv1 = new Version(1,0);
+        private static readonly Version MaxPv05 = new Version(0,5);
+
         private TTFTable ReadMaxProfile(uint length, TTFDirectoryList list, BigEndianReader reader)
         {
             long pos = reader.Position;
             Version vers = reader.ReadFixedVersion();
-            if (vers == new Version(0, 5))
-            {
-                MaxProfile prof = new MaxProfile(pos);
-                prof.TableVersion = vers;
-                prof.NumberOfGlyphs = reader.ReadUInt16();
 
-                return prof;
-            }
-            else if (vers == new Version(1, 0))
+            if (vers == new Version(1, 0)) //0x00010000
             {
                 MaxTTProfile ttp = new MaxTTProfile(pos);
                 ttp.TableVersion = vers;
@@ -472,6 +469,14 @@ namespace Scryber.OpenType
                 ttp.MaxComponentDepth = reader.ReadUInt16();
 
                 return ttp;
+            }
+            else if(vers.Minor <= 20480) //0x00005000
+            {
+                MaxProfile prof = new MaxProfile(pos);
+                prof.TableVersion = MaxPv05;
+                prof.NumberOfGlyphs = reader.ReadUInt16();
+
+                return prof;
             }
             else
                 throw new NotSupportedException("The MaxProfile version " + vers.ToString() + " is not supported");

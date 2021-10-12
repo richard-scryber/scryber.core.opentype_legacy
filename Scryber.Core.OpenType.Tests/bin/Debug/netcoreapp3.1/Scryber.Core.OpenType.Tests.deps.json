@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v3.1": {
       "Scryber.Core.OpenType.Tests/1.0.0": {
         "dependencies": {
-          "Scryber.Core.OpenType": "5.0.3"
+          "Scryber.Core.OpenType": "5.0.3",
+          "Typography.OpenFont": "1.0.0"
         },
         "runtime": {
           "Scryber.Core.OpenType.Tests.dll": {}
@@ -17,6 +18,11 @@
       "Scryber.Core.OpenType/5.0.3": {
         "runtime": {
           "Scryber.Core.OpenType.dll": {}
+        }
+      },
+      "Typography.OpenFont/1.0.0": {
+        "runtime": {
+          "Typography.OpenFont.dll": {}
         }
       }
     }
@@ -28,6 +34,11 @@
       "sha512": ""
     },
     "Scryber.Core.OpenType/5.0.3": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Typography.OpenFont/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

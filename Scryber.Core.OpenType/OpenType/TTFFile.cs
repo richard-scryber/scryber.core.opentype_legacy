@@ -261,7 +261,7 @@ namespace Scryber.OpenType
 
             HorizontalHeader hhead = this.Directories["hhea"].Table as HorizontalHeader;
             FontHeader head = this.Directories["head"].Table as FontHeader;
-
+            
             double availableFU = availablePts * ((double)head.UnitsPerEm / emsize);
             double charspaceFU = NoCharacterSpace;
 
